@@ -13,8 +13,8 @@ DARK_DIR = EXAMPLE_DIR.joinpath("dark")
 
 DSTDIR = BDIR.joinpath("media")
 
-KONS_GEO = "1000x500,0+0"
-CAP_GEO = "950x440+1920+60"
+KONS_GEO = "1400x400,0+0"
+CAP_GEO = "1350x340+1920+60"
 
 
 def konsole(rcfile: Path, profile=None):
@@ -24,7 +24,7 @@ def konsole(rcfile: Path, profile=None):
     if profile:
         cmd.insert(1, "--profile")
         cmd.insert(2, profile)
-    return subprocess.Popen(cmd)
+    return subprocess.Popen(cmd, stderr=subprocess.PIPE)
 
 
 def screencap(dstfile: Path):
