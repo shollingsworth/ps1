@@ -8,9 +8,9 @@ documentation: clean
 	@echo "Running docs"
 	./scripts/genmedia.py check
 	mm2github.py ./README.mm -w
-	./scripts/genpypyreadme.py
 	./scripts/gendoc.py
 	./scripts/genbadges.py
+	./scripts/genpypyreadme.py
 	pydoctor -W \
 	     --html-output=$(docs)/ \
 	     --buildtime="1996-06-17 15:00:00" \
@@ -31,7 +31,7 @@ pkg: documentation
 
 upload:
 	@echo "Running upload"
-	twine upload --repository freeplane-tools dist/*
+	twine upload --repository ps1 dist/*
 
 bump_version:
 	# order is important here
