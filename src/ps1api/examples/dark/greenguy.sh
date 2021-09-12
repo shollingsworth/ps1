@@ -1,5 +1,5 @@
 export PS1=$(
-ps1.py \
+ps1 \
     custom \
     --add_exit_code \
     --add_user_host \

@@ -1,5 +1,5 @@
 export PS1=$(
-ps1.py \
+ps1 \
     custom \
     --set_section_color "blue_1" \
     --set_fancy_lines \

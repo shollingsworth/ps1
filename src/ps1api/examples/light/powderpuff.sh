@@ -3,7 +3,7 @@ _c2="dark_magenta_2"
 _c4="hot_pink_1b"
 _c5="dark_gray"
 export PS1=$(
-ps1.py \
+ps1 \
     custom \
     --set_section_color "${_c1}:bold" \
     --set_fancy_lines \

@@ -10,7 +10,7 @@ _dirfilesize() {
 # customize different function calls in your prompt
 
 export PS1=$(
-ps1.py \
+ps1 \
     custom \
     --set_ends "❰" "❱" \
     --set_section_delim "━" \

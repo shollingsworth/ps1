@@ -3,7 +3,7 @@ _randstr() {
 }
 
 export PS1=$(
-ps1.py \
+ps1 \
     custom \
     --add_exit_code \
     --add_user_host "grey_66" "white" "grey_66" \
