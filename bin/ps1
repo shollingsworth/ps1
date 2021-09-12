@@ -1,0 +1,180 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Build a ps1 prompt."""
+import argparse
+import inspect
+import sys
+from pathlib import Path
+
+ME = Path(__file__)
+
+
+def _gen_template(ps1api):
+    template_map = {}
+    for i in dir(ps1api):
+        if i.startswith("_"):
+            continue
+        attr = getattr(ps1api, i)
+        if not isinstance(attr, type):
+            continue
+        if not issubclass(attr, ps1api.Base):
+            continue
+        if i == "Base":
+            continue
+        template_map[i.lower()] = attr
+    return template_map
+
+
+class SmartFormatter(argparse.HelpFormatter):
+    def _split_lines(self, text, width):
+        if text.startswith("R|"):
+            return text[2:].splitlines()
+        # this is the RawTextHelpFormatter._split_lines
+        return argparse.HelpFormatter._split_lines(self, text, width)
+
+
+class CustomAction(argparse.Action):
+    def __call__(self, parser, namespace, values, option_string=None):
+        if not "ordered_args" in namespace:
+            setattr(namespace, "ordered_args", [])
+        previous = namespace.ordered_args
+        previous.append((self.dest, values))
+        setattr(namespace, "ordered_args", previous)
+
+
+def run_show_examples(args):
+    for path, content in ps1api.iter_examples():
+        print("#" * 82)
+        print(f"source {path}")
+        print("#" * 82)
+        print(content)
+
+
+def run_color_codes(args):
+    for line in ps1api.get_color_codes(*args.filter):
+        sys.stdout.write(f"{line}\n")
+
+
+def run_template(args):
+    if args.list:
+        print(f"{ME.name} Template options:")
+        print()
+        for i in args.template_map:
+            print(i)
+        return
+    obj = args.template_map[args.template_name]()  # type: ps1api.Base
+    sys.stdout.write(obj.output())
+
+
+def run_custom(args):
+    obj = args.base()
+    ads = [fname for fname, _ in args.ordered_args if fname.startswith("add_")]
+    try:
+        exit_code_idx = ads.index("add_exit_code")
+    except ValueError:
+        exit_code_idx = 0
+    if exit_code_idx != 0:
+        msg = inspect.cleandoc(
+            """
+        argument --add_exit_code needs to be the at the first add position,
+        otherwise other commands may override the exit code $?
+        If you know how to fix this, pull requests are welcome!
+        """
+        )
+        raise RuntimeError(msg)
+    for fname, pargs in args.ordered_args:
+        func = getattr(obj, fname)
+        func(*pargs)
+    sys.stdout.write(obj.output())
+
+
+def _get_parser(template_map, Base):
+    parser = argparse.ArgumentParser(
+        formatter_class=SmartFormatter,
+        description=__doc__,
+    )
+
+    subparsers = parser.add_subparsers(title="subcommands")
+    list_sub = subparsers.add_parser("listcolors")
+    list_sub.add_argument(
+        "--filter",
+        "-f",
+        nargs="*",
+        help="Filter color values",
+        action="extend",
+        default=[],
+    )
+    list_sub.set_defaults(func=run_color_codes)
+
+    tgroup = subparsers.add_parser("template")
+    tgroup.set_defaults(func=run_template)
+    tgroup.add_argument(
+        "-t",
+        "--template_name",
+        default=list(template_map)[0],
+        help="Template Name",
+    )
+    tgroup.add_argument(
+        "-l",
+        "--list",
+        action="store_true",
+        default=False,
+        help="List Templates",
+    )
+
+    custom = subparsers.add_parser("custom")
+    custom.set_defaults(func=run_custom)
+
+    example_sub = subparsers.add_parser("examples")
+    example_sub.set_defaults(func=run_show_examples)
+
+    for i in dir(Base):
+        if not any([z in i for z in ["add_", "set_"]]):
+            continue
+        func = getattr(Base, i)
+        dstr = inspect.cleandoc(func.__doc__)
+        fsig = inspect.signature(func)
+        plen = len(fsig.parameters) - 1
+        args = []
+        defaults = []
+        for k, v in fsig.parameters.items():
+            if k == "self":
+                continue
+            args.append(k)
+            if v.default is not inspect.Parameter.empty:
+                defaults.append(v.default)
+
+        custom.add_argument(
+            f"--{i}",
+            nargs="*",
+            help=f"R|ARGS:{','.join(args) if args else 'None'}\n{dstr}",
+            action=CustomAction,
+        )
+    return parser
+
+
+if __name__ == "__main__":
+    try:
+        import ps1api
+
+        template_map = _gen_template(ps1api)
+        parser = _get_parser(template_map, ps1api.Base)
+
+        args = parser.parse_args()
+        # args = parser.parse_args(["template", "-l"])
+        # args = parser.parse_args(["list", "-f", "red"])
+        # args = parser.parse_args(["examples"])
+
+        arg_vals = [i for i in dir(args) if not i.startswith("_")]
+        if not arg_vals:
+            parser.print_help()
+            raise SystemExit()
+        args.template_map = template_map
+        args.base = ps1api.Base
+        args.func(args)
+    except Exception as err:
+        if str(err):
+            sys.stderr.write(str(err) + "\n")
+            raise
+        # We don't want to prevent shells from being made if there is an error
+        sys.stdout.write("export PS1='$ '")

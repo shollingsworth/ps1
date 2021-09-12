@@ -1,3 +1,4 @@
 include VERSION
 include .pypyreadme
+recursive-include src *.sh
 global-exclude *.pyc

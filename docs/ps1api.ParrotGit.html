@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>ps1api.ParrotGit : API documentation</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header navbar-brand">
+          ps1api
+          <a href="index.html">API Documentation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="ps1api.html">ps1api</a></code>.<code><a href="ps1api.ParrotGit.html">ParrotGit</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ParrotGit</span>(<a href="ps1api.Base.html" title="ps1api.Base">Base</a>):</code></p>
+        <p><a href="classIndex.html#ps1api.ParrotGit">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Parrot git template.</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id5">
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#build_template">build_template</a></code></td>
+    <td><span>Build template.</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="ps1api.Base.html">Base</a></code>:
+          </p>
+          <table class="children sortable" id="id6">
+  
+  <tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="ps1api.Base.html#USER">USER</a></code></td>
+    <td><span>PS1 user expansion value.</span></td>
+  </tr><tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="ps1api.Base.html#HOST">HOST</a></code></td>
+    <td><span>PS1 host expansion value.</span></td>
+  </tr><tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="ps1api.Base.html#WORKING_DIR">WORKING_DIR</a></code></td>
+    <td><span>PS1 working directory expansion value.</span></td>
+  </tr><tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="ps1api.Base.html#PROMPT">PROMPT</a></code></td>
+    <td><span>PS1 prompt for regular user / root user.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#__init__">__init__</a></code></td>
+    <td><span>Initialize class.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="ps1api.Base.html#sections">sections</a></code></td>
+    <td><span>Sections list.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#set_no_color">set_no_color</a></code></td>
+    <td><span>Set terminal to no color.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="ps1api.Base.html#no_color">no_color</a></code></td>
+    <td><span>Disable color from PS1 prompt.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#set_fancy_lines">set_fancy_lines</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="ps1api.Base.html#fancy_lines">fancy_lines</a></code></td>
+    <td><span>Turn on Fancy lines.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#set_section_delim">set_section_delim</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="ps1api.Base.html#delim">delim</a></code></td>
+    <td><span>Section delimiter.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#set_section_color">set_section_color</a></code></td>
+    <td><span>Set default section color.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="ps1api.Base.html#section_color">section_color</a></code></td>
+    <td><span>Delim and prefix/suffix color.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#set_prompt_color">set_prompt_color</a></code></td>
+    <td><span>Set prompt color. :: i.e. $ or # depending on user</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="ps1api.Base.html#prompt_color">prompt_color</a></code></td>
+    <td><span>PS1 Prompt $/# color.</span></td>
+  </tr><tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="ps1api.Base.html#color">color</a></code></td>
+    <td><span>Abstracted color class.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#set_ends">set_ends</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="ps1api.Base.html#section_prefix">section_prefix</a></code></td>
+    <td><span>Section prefix.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="ps1api.Base.html#section_suffix">section_suffix</a></code></td>
+    <td><span>Section suffix.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#add_custom">add_custom</a></code></td>
+    <td><span>Add custom section value/color.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#add_newline">add_newline</a></code></td>
+    <td><span>Insert newline.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#add_user_host">add_user_host</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#add_working_directory">add_working_directory</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#add_git_branch">add_git_branch</a></code></td>
+    <td><span>Add git branch to prompt.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#add_exit_code">add_exit_code</a></code></td>
+    <td><span>Add Exit code indicator to prompt.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#output">output</a></code></td>
+    <td><span>Output / export PS1 value.</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#_strip_color">_strip_color</a></code></td>
+    <td><span>Strip color from output.</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#_sammy">_sammy</a></code></td>
+    <td><span>Sandwhich section between separators.</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  <a name="ps1api.ParrotGit.build_template">
+    
+  </a>
+  <a name="build_template">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">build_template</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="ps1api.Base.html#build_template">ps1api.Base.build_template</a></code></div>
+    
+    <div><p>Build template.</p></div>
+  </div>
+</div>
+
+      </div>
+      <address>
+        <a href="index.html">API Documentation</a> for ps1api, generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a> 21.2.2 at 1996-06-17 15:00:00.
+      </address>
+
+    </div>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -2,18 +2,18 @@
 
 docs := ./docs
 srcdir := ./src
-pkgname := ps1
+pkgname := ps1api
 
 documentation: clean
 	@echo "Running docs"
+	./scripts/genmedia.py check
 	mm2github.py ./README.mm -w
-	./scripts/gencli.py
+	./scripts/gendoc.py
 	./scripts/genbadges.py
-	./scripts/genpypyreadme.py
 	pydoctor -W \
-		--html-output=$(docs)/ \
-		--buildtime="1996-06-17 15:00:00" \
-		$(srcdir)/$(pkgname)
+	     --html-output=$(docs)/ \
+	     --buildtime="1996-06-17 15:00:00" \
+	     $(srcdir)/$(pkgname)
 	./scripts/checkundocced.py
 
 docker_test:
@@ -22,7 +22,8 @@ docker_test:
 install_local:
 	pip3 install .
 
-pkg: documentation docker_test
+# pkg: documentation docker_test
+pkg: documentation
 	@echo "Running PKG"
 	python3 setup.py sdist
 	twine check dist/*
@@ -40,6 +41,9 @@ bump_version:
 	git diff HEAD
 	git commit -S --amend
 	bash -c "git tag v$$(cat VERSION)"
+
+media:
+	./scripts/genmedia.py create
 
 push:
 	$(eval tag = $(shell cat VERSION))
