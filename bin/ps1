@@ -94,8 +94,13 @@ def _get_parser(template_map, Base):
         description=__doc__,
     )
 
-    subparsers = parser.add_subparsers(title="subcommands")
-    list_sub = subparsers.add_parser("listcolors")
+    subparsers = parser.add_subparsers(
+        title="subcommands",
+    )
+    list_sub = subparsers.add_parser(
+        "listcolors",
+        formatter_class=SmartFormatter,
+    )
     list_sub.add_argument(
         "--filter",
         "-f",
@@ -106,7 +111,10 @@ def _get_parser(template_map, Base):
     )
     list_sub.set_defaults(func=run_color_codes)
 
-    tgroup = subparsers.add_parser("template")
+    tgroup = subparsers.add_parser(
+        "template",
+        formatter_class=SmartFormatter,
+    )
     tgroup.set_defaults(func=run_template)
     tgroup.add_argument(
         "-t",
@@ -122,10 +130,16 @@ def _get_parser(template_map, Base):
         help="List Templates",
     )
 
-    custom = subparsers.add_parser("custom")
+    custom = subparsers.add_parser(
+        "custom",
+        formatter_class=SmartFormatter,
+    )
     custom.set_defaults(func=run_custom)
 
-    example_sub = subparsers.add_parser("examples")
+    example_sub = subparsers.add_parser(
+        "examples",
+        formatter_class=SmartFormatter,
+    )
     example_sub.set_defaults(func=run_show_examples)
 
     for i in dir(Base):
@@ -161,6 +175,7 @@ if __name__ == "__main__":
         parser = _get_parser(template_map, ps1api.Base)
 
         args = parser.parse_args()
+        # args = parser.parse_args(['custom', '-h'])
         # args = parser.parse_args(["template", "-l"])
         # args = parser.parse_args(["list", "-f", "red"])
         # args = parser.parse_args(["examples"])

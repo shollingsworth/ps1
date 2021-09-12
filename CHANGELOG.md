@@ -1,6 +1,11 @@
+# v0.0.4
+#### Fixed bug in help display
+> 2021-09-12 21:37 UTC [HEAD](https://github.com/shollingsworth/ps1/commit/HEAD)
+
+---
 # v0.0.3
 #### Fixed typo in examples
-> 2021-09-12 21:15 UTC [HEAD](https://github.com/shollingsworth/ps1/commit/HEAD)
+> 2021-09-12 21:15 UTC [45ac97f](https://github.com/shollingsworth/ps1/commit/45ac97f54a191f987842bb8af7bd6ae2c8a7ba36)
 
 ---
 # v0.0.2
