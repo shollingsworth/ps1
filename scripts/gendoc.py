@@ -25,7 +25,7 @@ def _iter_subpaser_helps(parser: ArgumentParser):
         if isinstance(action, argparse._SubParsersAction)
     ]
     for action in sub_parser_actions:
-        for choice, subparser in action.choices.items():
+        for choice, subparser in sorted(action.choices.items()):
             htxt = subparser.format_help()
             htxt = htxt.replace(ME.name, "ps1")
             yield choice, htxt
@@ -46,7 +46,7 @@ def _iter_examples(p: Path = None):
 
 def _get_example_output():
     lines = []
-    for srcfile, media in _iter_examples():
+    for srcfile, media in sorted(_iter_examples()):
         srclink = f"{GITHUB_BASE}/blob/main/{srcfile.relative_to(BASE)}"
         imglink = f"{GITHUB_RAW_BASE}/main/{media.relative_to(BASE)}"
         lines.append(f"### [{srcfile.name}]({srclink})")

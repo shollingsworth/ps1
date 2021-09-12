@@ -1,6 +1,14 @@
+# v0.0.6
+#### added ip example
+> 2021-09-12 22:53 UTC [HEAD](https://github.com/shollingsworth/ps1/commit/HEAD)
+
+#### Updated example
+> 2021-09-12 22:23 UTC [803acd9](https://github.com/shollingsworth/ps1/commit/803acd9521d26e60a6e181632a6362830b8416e3)
+
+---
 # v0.0.5
 #### Updated documentation
-> 2021-09-12 21:38 UTC [HEAD](https://github.com/shollingsworth/ps1/commit/HEAD)
+> 2021-09-12 21:38 UTC [63d07bc](https://github.com/shollingsworth/ps1/commit/63d07bc1de48846b4093904583fba11f6c778a79)
 
 ---
 # v0.0.4
