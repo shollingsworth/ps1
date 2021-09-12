@@ -41,11 +41,11 @@ export PS1="$(ps1.py template -t parrot)"
 ## PS1 Command [&#8593;](#toc)
 ### subcommand listcolors
 ```
-usage: ps1 listcolors [-h] [--filter [FILTER ...]]
+usage: ps1 listcolors [-h] [--filter [FILTER [FILTER ...]]]
 
 optional arguments:
   -h, --help            show this help message and exit
-  --filter [FILTER ...], -f [FILTER ...]
+  --filter [FILTER [FILTER ...]], -f [FILTER [FILTER ...]]
                         Filter color values
 
 ```
@@ -66,39 +66,42 @@ optional arguments:
 
 ### subcommand custom
 ```
-usage: ps1 custom [-h] [--add_custom [ADD_CUSTOM ...]] [--add_exit_code [ADD_EXIT_CODE ...]]
-                        [--add_git_branch [ADD_GIT_BRANCH ...]] [--add_newline [ADD_NEWLINE ...]]
-                        [--add_user_host [ADD_USER_HOST ...]] [--add_working_directory [ADD_WORKING_DIRECTORY ...]]
-                        [--set_ends [SET_ENDS ...]] [--set_fancy_lines [SET_FANCY_LINES ...]] [--set_no_color [SET_NO_COLOR ...]]
-                        [--set_prompt_color [SET_PROMPT_COLOR ...]] [--set_section_color [SET_SECTION_COLOR ...]]
-                        [--set_section_delim [SET_SECTION_DELIM ...]]
+usage: ps1 custom [-h] [--add_custom [ADD_CUSTOM [ADD_CUSTOM ...]]] [--add_exit_code [ADD_EXIT_CODE [ADD_EXIT_CODE ...]]]
+                        [--add_git_branch [ADD_GIT_BRANCH [ADD_GIT_BRANCH ...]]] [--add_newline [ADD_NEWLINE [ADD_NEWLINE ...]]]
+                        [--add_user_host [ADD_USER_HOST [ADD_USER_HOST ...]]]
+                        [--add_working_directory [ADD_WORKING_DIRECTORY [ADD_WORKING_DIRECTORY ...]]]
+                        [--set_ends [SET_ENDS [SET_ENDS ...]]] [--set_fancy_lines [SET_FANCY_LINES [SET_FANCY_LINES ...]]]
+                        [--set_no_color [SET_NO_COLOR [SET_NO_COLOR ...]]]
+                        [--set_prompt_color [SET_PROMPT_COLOR [SET_PROMPT_COLOR ...]]]
+                        [--set_section_color [SET_SECTION_COLOR [SET_SECTION_COLOR ...]]]
+                        [--set_section_delim [SET_SECTION_DELIM [SET_SECTION_DELIM ...]]]
 
 optional arguments:
   -h, --help            show this help message and exit
-  --add_custom [ADD_CUSTOM ...]
+  --add_custom [ADD_CUSTOM [ADD_CUSTOM ...]]
                         R|ARGS:value,color Add custom section value/color.
-  --add_exit_code [ADD_EXIT_CODE ...]
+  --add_exit_code [ADD_EXIT_CODE [ADD_EXIT_CODE ...]]
                         R|ARGS:ok_txt,err_txt,ok_color,err_color Add Exit code indicator to prompt.
-  --add_git_branch [ADD_GIT_BRANCH ...]
+  --add_git_branch [ADD_GIT_BRANCH [ADD_GIT_BRANCH ...]]
                         R|ARGS:color Add git branch to prompt.
-  --add_newline [ADD_NEWLINE ...]
+  --add_newline [ADD_NEWLINE [ADD_NEWLINE ...]]
                         R|ARGS:None Insert newline.
-  --add_user_host [ADD_USER_HOST ...]
+  --add_user_host [ADD_USER_HOST [ADD_USER_HOST ...]]
                         R|ARGS:user_color,at_sym_color,host_color Add User/Host to prompt. :: [user@hostname]-[section2] ^ add this
-  --add_working_directory [ADD_WORKING_DIRECTORY ...]
+  --add_working_directory [ADD_WORKING_DIRECTORY [ADD_WORKING_DIRECTORY ...]]
                         R|ARGS:color Add Working directory to prompt. :: [user@hostame]─[~/path/i/am/in] ^ add this
-  --set_ends [SET_ENDS ...]
+  --set_ends [SET_ENDS [SET_ENDS ...]]
                         R|ARGS:start,end Set Section start / end values. :: {} {section1}-{section2} [] [section1]-[section2] ❰❱
                         ❰section1❱-❰section2❱
-  --set_fancy_lines [SET_FANCY_LINES ...]
+  --set_fancy_lines [SET_FANCY_LINES [SET_FANCY_LINES ...]]
                         R|ARGS:value Set fancy line breaks like the following :: ┌─── ├─── └──╼
-  --set_no_color [SET_NO_COLOR ...]
+  --set_no_color [SET_NO_COLOR [SET_NO_COLOR ...]]
                         R|ARGS:value Set terminal to no color.
-  --set_prompt_color [SET_PROMPT_COLOR ...]
+  --set_prompt_color [SET_PROMPT_COLOR [SET_PROMPT_COLOR ...]]
                         R|ARGS:color Set prompt color. :: i.e. $ or # depending on user
-  --set_section_color [SET_SECTION_COLOR ...]
+  --set_section_color [SET_SECTION_COLOR [SET_SECTION_COLOR ...]]
                         R|ARGS:color Set default section color.
-  --set_section_delim [SET_SECTION_DELIM ...]
+  --set_section_delim [SET_SECTION_DELIM [SET_SECTION_DELIM ...]]
                         R|ARGS:delim Set section separator. :: i.e. [section1]-[section2] ^ separator
 
 ```
@@ -116,43 +119,43 @@ optional arguments:
 
 ## Examples [&#8593;](#toc)
 ### [entropy.sh](https://github.com/shollingsworth/ps1/blob/main/src/ps1api/examples/dark/entropy.sh)
-![entropy.sh](https://raw.githubusercontent.com/shollingsworth/ps1/blob/main/media/dark/entropy.sh.png)
-
-
-### [filecount.sh](https://github.com/shollingsworth/ps1/blob/main/src/ps1api/examples/dark/filecount.sh)
-![filecount.sh](https://raw.githubusercontent.com/shollingsworth/ps1/blob/main/media/dark/filecount.sh.png)
-
-
-### [greenguy.sh](https://github.com/shollingsworth/ps1/blob/main/src/ps1api/examples/dark/greenguy.sh)
-![greenguy.sh](https://raw.githubusercontent.com/shollingsworth/ps1/blob/main/media/dark/greenguy.sh.png)
+![entropy.sh](https://raw.githubusercontent.com/shollingsworth/ps1/main/media/dark/entropy.sh.png)
 
 
 ### [parrot.sh](https://github.com/shollingsworth/ps1/blob/main/src/ps1api/examples/dark/parrot.sh)
-![parrot.sh](https://raw.githubusercontent.com/shollingsworth/ps1/blob/main/media/dark/parrot.sh.png)
-
-
-### [plainjane.sh](https://github.com/shollingsworth/ps1/blob/main/src/ps1api/examples/dark/plainjane.sh)
-![plainjane.sh](https://raw.githubusercontent.com/shollingsworth/ps1/blob/main/media/dark/plainjane.sh.png)
-
-
-### [purplegoblin.sh](https://github.com/shollingsworth/ps1/blob/main/src/ps1api/examples/dark/purplegoblin.sh)
-![purplegoblin.sh](https://raw.githubusercontent.com/shollingsworth/ps1/blob/main/media/dark/purplegoblin.sh.png)
+![parrot.sh](https://raw.githubusercontent.com/shollingsworth/ps1/main/media/dark/parrot.sh.png)
 
 
 ### [skulls.sh](https://github.com/shollingsworth/ps1/blob/main/src/ps1api/examples/dark/skulls.sh)
-![skulls.sh](https://raw.githubusercontent.com/shollingsworth/ps1/blob/main/media/dark/skulls.sh.png)
+![skulls.sh](https://raw.githubusercontent.com/shollingsworth/ps1/main/media/dark/skulls.sh.png)
 
 
-### [fire_ice.sh](https://github.com/shollingsworth/ps1/blob/main/src/ps1api/examples/light/fire_ice.sh)
-![fire_ice.sh](https://raw.githubusercontent.com/shollingsworth/ps1/blob/main/media/light/fire_ice.sh.png)
+### [purplegoblin.sh](https://github.com/shollingsworth/ps1/blob/main/src/ps1api/examples/dark/purplegoblin.sh)
+![purplegoblin.sh](https://raw.githubusercontent.com/shollingsworth/ps1/main/media/dark/purplegoblin.sh.png)
+
+
+### [plainjane.sh](https://github.com/shollingsworth/ps1/blob/main/src/ps1api/examples/dark/plainjane.sh)
+![plainjane.sh](https://raw.githubusercontent.com/shollingsworth/ps1/main/media/dark/plainjane.sh.png)
+
+
+### [greenguy.sh](https://github.com/shollingsworth/ps1/blob/main/src/ps1api/examples/dark/greenguy.sh)
+![greenguy.sh](https://raw.githubusercontent.com/shollingsworth/ps1/main/media/dark/greenguy.sh.png)
+
+
+### [filecount.sh](https://github.com/shollingsworth/ps1/blob/main/src/ps1api/examples/dark/filecount.sh)
+![filecount.sh](https://raw.githubusercontent.com/shollingsworth/ps1/main/media/dark/filecount.sh.png)
 
 
 ### [magenta.sh](https://github.com/shollingsworth/ps1/blob/main/src/ps1api/examples/light/magenta.sh)
-![magenta.sh](https://raw.githubusercontent.com/shollingsworth/ps1/blob/main/media/light/magenta.sh.png)
+![magenta.sh](https://raw.githubusercontent.com/shollingsworth/ps1/main/media/light/magenta.sh.png)
 
 
 ### [powderpuff.sh](https://github.com/shollingsworth/ps1/blob/main/src/ps1api/examples/light/powderpuff.sh)
-![powderpuff.sh](https://raw.githubusercontent.com/shollingsworth/ps1/blob/main/media/light/powderpuff.sh.png)
+![powderpuff.sh](https://raw.githubusercontent.com/shollingsworth/ps1/main/media/light/powderpuff.sh.png)
+
+
+### [fire_ice.sh](https://github.com/shollingsworth/ps1/blob/main/src/ps1api/examples/light/fire_ice.sh)
+![fire_ice.sh](https://raw.githubusercontent.com/shollingsworth/ps1/main/media/light/fire_ice.sh.png)
 
 
 ## Other Docs [&#8593;](#toc)

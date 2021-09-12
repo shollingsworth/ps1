@@ -48,7 +48,7 @@ def _get_example_output():
     lines = []
     for srcfile, media in _iter_examples():
         srclink = f"{GITHUB_BASE}/blob/main/{srcfile.relative_to(BASE)}"
-        imglink = f"{GITHUB_RAW_BASE}/blob/main/{media.relative_to(BASE)}"
+        imglink = f"{GITHUB_RAW_BASE}/main/{media.relative_to(BASE)}"
         lines.append(f"### [{srcfile.name}]({srclink})")
         lines.append(f"![{srcfile.name}]({imglink})")
         lines.append("\n")
