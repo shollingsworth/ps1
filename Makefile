@@ -8,6 +8,7 @@ documentation: clean
 	@echo "Running docs"
 	./scripts/genmedia.py check
 	mm2github.py ./README.mm -w
+	./scripts/genpypyreadme.py
 	./scripts/gendoc.py
 	./scripts/genbadges.py
 	pydoctor -W \

@@ -1,6 +1,6 @@
 <map version="freeplane 1.7.0">
 <!--To view this file, download free mind mapping software Freeplane from http://freeplane.sourceforge.net -->
-<node TEXT="PS1" FOLDED="false" ID="ID_1002858447" CREATED="1629749144699" MODIFIED="1631471981804" STYLE="oval">
+<node TEXT="PS1" FOLDED="false" ID="ID_1002858447" CREATED="1629749144699" MODIFIED="1631479929144" STYLE="oval">
 <font SIZE="18"/>
 <hook NAME="MapStyle">
     <properties edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" show_icon_for_attributes="true" show_note_icons="true" fit_to_viewport="false"/>
@@ -73,7 +73,13 @@
   </head>
   <body>
     <p>
-      TODO
+      This program is meant to take the pain out of generating nice bash PS1 prompts.
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      Pull requests welcome! And if you build an awesome theme, drop something in the [examples](./src/ps1api/examples) folder!
     </p>
   </body>
 </html>
@@ -123,7 +129,7 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="Quickstart" POSITION="right" ID="ID_254775212" CREATED="1629939067633" MODIFIED="1631472088092">
+<node TEXT="Quickstart" POSITION="right" ID="ID_254775212" CREATED="1629939067633" MODIFIED="1631480073800">
 <edge COLOR="#ff0000"/>
 <richcontent TYPE="NOTE">
 
@@ -148,7 +154,7 @@
       
     </p>
     <p>
-      export PS1=&quot;$(ps1.py template -t parrot)&quot;
+      export PS1=&quot;$(ps1 template -t parrot)&quot;
     </p>
     <p>
       ```
@@ -172,7 +178,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="Examples" POSITION="right" ID="ID_52257950" CREATED="1631462145312" MODIFIED="1631462153067">
@@ -189,7 +194,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="Other Docs" POSITION="right" ID="ID_1589081779" CREATED="1630019734423" MODIFIED="1631462171498">
@@ -209,7 +213,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>

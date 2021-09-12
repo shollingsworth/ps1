@@ -13,7 +13,9 @@
 
 
 # PS1 [&#8593;](#toc)
-TODO
+This program is meant to take the pain out of generating nice bash PS1 prompts.
+
+Pull requests welcome! And if you build an awesome theme, drop something in the [examples](./src/ps1api/examples) folder!
 ## Installation [&#8593;](#toc)
 To install this package from [pypy](https://pypi.org/project/ps1/) run the following command.
 
@@ -34,7 +36,7 @@ Here's an example to get you up and running!
 
 pip3 install ps1
 
-export PS1="$(ps1.py template -t parrot)"
+export PS1="$(ps1 template -t parrot)"
 
 ```
 

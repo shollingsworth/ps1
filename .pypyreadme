@@ -1,24 +1,17 @@
 # TOC
-* [Freeplane Tools](#freeplane-tools-)
+* [PS1](#ps1-)
    * [Installation](#installation-)
    * [License](#license-)
    * [Quickstart](#quickstart-)
-      * [Example](#example-)
-   * [CLI Commands](#cli-commands-)
-   * [Building](#building-)
+   * [PS1 Command](#ps1-command-)
+   * [Examples](#examples-)
    * [Other Docs](#other-docs-)
 
 
-# Freeplane Tools [&#8593;](#toc)
-If you hate writing Markdown, but love mindmaps (and using [freeplane](https://www.freeplane.org/wiki/index.php/Home) this toolset is for you.
+# PS1 [&#8593;](#toc)
+This program is meant to take the pain out of generating nice bash PS1 prompts.
 
-These python programs aim to ease translating a mindmap into various markdown formats.
-
-This document [README.md](https://github.com/shollingsworth/ps1/blob/main/README.md) was made with `mm2github.py` with  [README.mm](https://github.com/shollingsworth/ps1/blob/main/README.mm) as a source.
-
-Enjoy!
-
-Pull requests welcome. :)
+Pull requests welcome! And if you build an awesome theme, drop something in the [examples](https://github.com/shollingsworth/ps1/blob/main/src/ps1api/examples) folder!
 ## Installation [&#8593;](#toc)
 To install this package from [pypy](https://pypi.org/project/ps1/) run the following command.
 
@@ -32,49 +25,21 @@ pip3 install ps1
 ## License [&#8593;](#toc)
 See: [LICENSE](https://github.com/shollingsworth/ps1/blob/main/LICENSE)
 ## Quickstart [&#8593;](#toc)
-Run the following if you want a quick demo of how this works. Have `freeplane` installed before running this.
+Here's an example to get you up and running!
 
 
 ```
 
-pip3 install freeplane_tools
+pip3 install ps1
 
-mm2template.py mymindmap.mm
-
-freeplane mymindmap.mm
-
-# do your editing in freeplane
-
-mm2github.py -w mymindmap.mm
-
+export PS1="$(ps1 template -t parrot)"
 
 ```
 
-This will create: `mymindmap.md`
-### Example [&#8593;](#toc)
-Just want to look?
-
-[This](./examples/template.mm) mindmap produces the following [markdown](./examples/template.md)
-## CLI Commands [&#8593;](#toc)
-__CLI_COMMANDS__
-## Building [&#8593;](#toc)
-os / Package prerequisites:
-
-```
-
-pip3 install twine pydoctor
-
-```
-
-* Install Locally from current branch
-   * ``` make install_local ```
-* Build Package
-   * ``` make pkg ```
-* Release
-   * ```make documentation```
-      * Make sure git tree is clean
-   * ```make bump_release```
-   * ```make release```
+## PS1 Command [&#8593;](#toc)
+__PS1__
+## Examples [&#8593;](#toc)
+__EXAMPLES__
 ## Other Docs [&#8593;](#toc)
-* [Api Docs](https://shollingsworth.github.io/freeplane_tools/)
+* [Api Docs](https://shollingsworth.github.io/ps1/)
 * [Changelog](./CHANGELOG.md)
