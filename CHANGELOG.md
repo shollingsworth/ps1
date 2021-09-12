@@ -1,6 +1,11 @@
+# v0.0.5
+#### Updated documentation
+> 2021-09-12 21:38 UTC [HEAD](https://github.com/shollingsworth/ps1/commit/HEAD)
+
+---
 # v0.0.4
 #### Fixed bug in help display
-> 2021-09-12 21:37 UTC [HEAD](https://github.com/shollingsworth/ps1/commit/HEAD)
+> 2021-09-12 21:37 UTC [5b2176d](https://github.com/shollingsworth/ps1/commit/5b2176d1b1f5518a178a9bbfd876afe1fa35a01e)
 
 ---
 # v0.0.3

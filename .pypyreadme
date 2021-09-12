@@ -81,30 +81,65 @@ usage: ps1 custom [-h] [--add_custom [ADD_CUSTOM [ADD_CUSTOM ...]]] [--add_exit_
 optional arguments:
   -h, --help            show this help message and exit
   --add_custom [ADD_CUSTOM [ADD_CUSTOM ...]]
-                        R|ARGS:value,color Add custom section value/color.
+                        ARGS:value,color
+                        Add custom section value/color.
   --add_exit_code [ADD_EXIT_CODE [ADD_EXIT_CODE ...]]
-                        R|ARGS:ok_txt,err_txt,ok_color,err_color Add Exit code indicator to prompt.
+                        ARGS:ok_txt,err_txt,ok_color,err_color
+                        Add Exit code indicator to prompt.
   --add_git_branch [ADD_GIT_BRANCH [ADD_GIT_BRANCH ...]]
-                        R|ARGS:color Add git branch to prompt.
+                        ARGS:color
+                        Add git branch to prompt.
   --add_newline [ADD_NEWLINE [ADD_NEWLINE ...]]
-                        R|ARGS:None Insert newline.
+                        ARGS:None
+                        Insert newline.
   --add_user_host [ADD_USER_HOST [ADD_USER_HOST ...]]
-                        R|ARGS:user_color,at_sym_color,host_color Add User/Host to prompt. :: [user@hostname]-[section2] ^ add this
+                        ARGS:user_color,at_sym_color,host_color
+                        Add User/Host to prompt.
+                        ::
+                            [user@hostname]-[section2]
+                                  ^ add this
   --add_working_directory [ADD_WORKING_DIRECTORY [ADD_WORKING_DIRECTORY ...]]
-                        R|ARGS:color Add Working directory to prompt. :: [user@hostame]─[~/path/i/am/in] ^ add this
+                        ARGS:color
+                        Add Working directory to prompt.
+                        ::
+                            [user@hostame]─[~/path/i/am/in]
+                                             ^ add this
   --set_ends [SET_ENDS [SET_ENDS ...]]
-                        R|ARGS:start,end Set Section start / end values. :: {} {section1}-{section2} [] [section1]-[section2] ❰❱
-                        ❰section1❱-❰section2❱
+                        ARGS:start,end
+                        Set Section start / end values.
+                        ::
+                            {}
+                            {section1}-{section2}
+                        
+                            []
+                            [section1]-[section2]
+                        
+                            ❰❱
+                            ❰section1❱-❰section2❱
   --set_fancy_lines [SET_FANCY_LINES [SET_FANCY_LINES ...]]
-                        R|ARGS:value Set fancy line breaks like the following :: ┌─── ├─── └──╼
+                        ARGS:value
+                        Set fancy line breaks like the following
+                        ::
+                            ┌───
+                            ├───
+                            └──╼
   --set_no_color [SET_NO_COLOR [SET_NO_COLOR ...]]
-                        R|ARGS:value Set terminal to no color.
+                        ARGS:value
+                        Set terminal to no color.
   --set_prompt_color [SET_PROMPT_COLOR [SET_PROMPT_COLOR ...]]
-                        R|ARGS:color Set prompt color. :: i.e. $ or # depending on user
+                        ARGS:color
+                        Set prompt color.
+                        ::
+                            i.e. $ or # depending on user
   --set_section_color [SET_SECTION_COLOR [SET_SECTION_COLOR ...]]
-                        R|ARGS:color Set default section color.
+                        ARGS:color
+                        Set default section color.
   --set_section_delim [SET_SECTION_DELIM [SET_SECTION_DELIM ...]]
-                        R|ARGS:delim Set section separator. :: i.e. [section1]-[section2] ^ separator
+                        ARGS:delim
+                        Set section separator.
+                        ::
+                            i.e. [section1]-[section2]
+                                           ^ separator
 
 ```
 
