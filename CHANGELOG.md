@@ -1,6 +1,19 @@
+# v0.0.9
+#### Bugfixes on PS1 prompt behaviour
+> 2021-09-13 22:43 UTC [HEAD](https://github.com/shollingsworth/ps1/commit/HEAD)
+
+```
+Fix bug when some subcommands called by themselves
+    Updated ps1 value sections
+    Added PS1 output to examples
+    Fixed bug with how ansi interacts with the PS1 prompt
+    Updated output to escape \e ESC in bash so PS1 value looks like more traditional prompt values
+    added face example
+```
+---
 # v0.0.8
 #### Added too_many_options example
-> 2021-09-13 17:43 UTC [HEAD](https://github.com/shollingsworth/ps1/commit/HEAD)
+> 2021-09-13 17:43 UTC [77ac42b](https://github.com/shollingsworth/ps1/commit/77ac42b35c9e82b8047534b0b404b614e32f5a43)
 
 ```
 Added option

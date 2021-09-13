@@ -3,7 +3,6 @@
 """PS1 Prompt module."""
 from colored import fg, bg, attr, names
 from pathlib import Path
-import os
 import itertools
 import re
 
@@ -136,7 +135,7 @@ class Base(object):
         """PS1 Prompt $/# color."""
 
     @classmethod
-    def color(cls, cval: str, txt):
+    def color(cls, cval: str, txt, escape=True):
         """Abstracted color class."""
         fg_name = None
         bg_name = None
@@ -155,10 +154,20 @@ class Base(object):
         else:
             fg_name = cval
 
+        # enclose color codes in escaped bracketed to prevent weirdness at the prompt
+        # https://superuser.com/a/609940
         _fg = fg(fg_name) if fg_name else ""
         _bg = bg(bg_name) if bg_name else ""
         attr_str = "".join([attr(attr_name) for attr_name in attrs])
-        return f"{_fg}{_bg}{attr_str}{txt}{attr(0)}"
+        end_val = attr("reset")
+        if escape:
+            _fg = "\\[%s\\]" % _fg if _fg else ""
+            _bg = "\\[%s\\]" % _bg if _bg else ""
+            attr_str = "\\[%s\\]" % attr_str if attr_str else ""
+            end_val = "\\[%s\\]" % end_val
+        color_v = "".join([_fg, _bg, attr_str])
+        retval = f"{color_v}{txt}{end_val}"
+        return retval
 
     def build_template(self):
         """Build template (if defined in subclass)."""
@@ -187,6 +196,12 @@ class Base(object):
             ❰❱
             ❰section1❱-❰section2❱
         """
+
+        def _repl_brackets(val):
+            """Replace brackets with octal to avoid confusion."""
+            return val.replace("]", r"\135").replace("[", r"\133")
+
+        start, end = map(_repl_brackets, [start, end])
         self.section_prefix = start
         """Section prefix."""
         self.section_suffix = end
@@ -498,9 +513,24 @@ class Base(object):
         pad = " "
         pval = self.color(self.prompt_color, self.PROMPT)
         retval = f"{retval}{pad}{pval}"
-        if not self.no_color:
-            return retval
-        return self._strip_color(retval)
+
+        if self.no_color:
+            return self._strip_color(retval).replace(r"\[\]", "")
+        output = retval.replace("\x1b", r"\e").replace("\n", r"\n")
+
+        # Convert UTF values to ASCII ENCODED
+        def _uniconv(val):
+            i = ord(val)
+            if i < 256:
+                return val
+            else:
+                enc = val.encode()
+                while len(enc) % 4 != 0:
+                    enc = b"\0" + enc
+                return "\\%s" % "\\".join([f"{i:o}".zfill(3) for i in enc])
+
+        output = "".join(map(_uniconv, output))
+        return output
 
 
 class Parrot(Base):
@@ -552,7 +582,7 @@ def get_color_codes(*filter_vals):
     for i in names:
         code = i.lower()
         if all([m in code for m in filter_vals]):
-            yield Base().color(code, code)
+            yield Base().color(code, code, False)
 
     for bg in names:
         bg = bg.lower()
@@ -560,7 +590,7 @@ def get_color_codes(*filter_vals):
             i = i.lower()
             code = f"{i}/{bg}"
             if all([m in code for m in filter_vals]):
-                yield Base().color(code, code)
+                yield Base().color(code, code, False)
 
     for k in attr_combos:
         for bg in ["white", "black"]:
@@ -569,4 +599,4 @@ def get_color_codes(*filter_vals):
                 akey = ":".join(k)
                 code = f"{i}/{bg}:{akey}"
                 if all([m in code for m in filter_vals]):
-                    yield Base().color(code, code)
+                    yield Base().color(code, code, False)

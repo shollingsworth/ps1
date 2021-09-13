@@ -5,6 +5,8 @@ import sys
 import argparse
 from argparse import ArgumentParser
 import ps1api
+import subprocess
+import shlex
 
 ME = Path(__file__)
 BASE = Path(__file__).resolve().parent.parent
@@ -31,6 +33,11 @@ def _iter_subpaser_helps(parser: ArgumentParser):
             yield choice, htxt
 
 
+def _get_ps1_export_val(p: Path):
+    out = subprocess.check_output(["bash", "-c", f"source {p}; echo $PS1"])
+    return out.decode()
+
+
 def _iter_examples(p: Path = None):
     if p is None:
         p = EXAMPLES_DIR
@@ -41,21 +48,26 @@ def _iter_examples(p: Path = None):
             mpath = MEDIA_DIR.joinpath("/".join(i.parts[-2:]) + ".png")
             if not mpath.exists():
                 raise SystemExit(f"{mpath} does not exist")
-            yield i, mpath
+            ps1_output = _get_ps1_export_val(i)
+            yield i, ps1_output, mpath
 
 
 def _get_example_output():
     lines = []
-    for srcfile, media in sorted(_iter_examples()):
+    for srcfile, ps1_output, media in sorted(_iter_examples()):
         srclink = f"{GITHUB_BASE}/blob/main/{srcfile.relative_to(BASE)}"
         imglink = f"{GITHUB_RAW_BASE}/main/{media.relative_to(BASE)}"
+        slexval = shlex.quote(ps1_output.rstrip())
         lines.append(f"### [{srcfile.name}]({srclink})")
+        lines.append("```")
+        lines.append(f"export PS1={slexval}")
+        lines.append("```")
         lines.append(f"![{srcfile.name}]({imglink})")
         lines.append("\n")
     return "\n".join(lines)
 
 
-def _get_ps1_output(parser):
+def _get_ps1_cmd_output(parser):
     lines = []
     for choice, content in _iter_subpaser_helps(parser):
         lines.append(f"### {choice.title()}")
@@ -73,7 +85,7 @@ def main():
     parser = mod._get_parser(template_map, ps1api.Base)  # type: ArgumentParser
 
     with README.open("r+") as fileh:
-        fmt = _get_ps1_output(parser)
+        fmt = _get_ps1_cmd_output(parser)
         data = fileh.read()
         fileh.seek(0)
         data = data.replace("__PS1__", fmt)

@@ -69,13 +69,18 @@ def run_template(args):
         for i in args.template_map:
             print(i)
         return
+    if not args.template_name:
+        raise SystemExit('No Template Selected')
     obj = args.template_map[args.template_name]()  # type: ps1api.Base
     sys.stdout.write(obj.output())
 
 
 def run_custom(args):
     obj = args.base()
-    ads = [fname for fname, _ in args.ordered_args if fname.startswith("add_")]
+    try:
+        ads = [fname for fname, _ in args.ordered_args if fname.startswith("add_")]
+    except AttributeError:
+        raise SystemExit(f'Custom: Nothing selected')
     try:
         exit_code_idx = ads.index("add_exit_code")
     except ValueError:
@@ -126,7 +131,6 @@ def _get_parser(template_map, Base):
     tgroup.add_argument(
         "-t",
         "--template_name",
-        default=list(template_map)[0],
         help="Template Name",
     )
     tgroup.add_argument(
@@ -184,17 +188,15 @@ if __name__ == "__main__":
         parser = _get_parser(template_map, ps1api.Base)
 
         args = parser.parse_args()
-        # args = parser.parse_args(['custom', '-h'])
-        # args = parser.parse_args(["template", "-l"])
-        # args = parser.parse_args(["list", "-f", "red"])
-        # args = parser.parse_args(["examples"])
-
+        # args = parser.parse_args(['custom'])
+        # args = parser.parse_args(['template'])
         arg_vals = [i for i in dir(args) if not i.startswith("_")]
         if not arg_vals:
             parser.print_help()
             raise SystemExit()
         args.template_map = template_map
         args.base = ps1api.Base
+        args.parser = parser
         args.func(args)
     except Exception as err:
         if str(err):
