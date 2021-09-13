@@ -58,7 +58,7 @@ def _get_example_output():
 def _get_ps1_output(parser):
     lines = []
     for choice, content in _iter_subpaser_helps(parser):
-        lines.append(f"### subcommand {choice}")
+        lines.append(f"### {choice.title()}")
         lines.append("```")
         lines.append(content)
         lines.append("```")

@@ -41,7 +41,7 @@ export PS1="$(ps1 template -t parrot)"
 ```
 
 ## PS1 Command [&#8593;](#toc)
-### subcommand custom
+### Custom
 ```
 usage: ps1 custom [-h] [--add_bash_ver color title] [--add_bash_ver_release color title] [--add_cmd_num color title]
                         [--add_custom value color title] [--add_date_week_month_day color title]
@@ -134,7 +134,7 @@ optional arguments:
 ```
 
 
-### subcommand examples
+### Examples
 ```
 usage: ps1 examples [-h]
 
@@ -144,7 +144,7 @@ optional arguments:
 ```
 
 
-### subcommand listcolors
+### Listcolors
 ```
 usage: ps1 listcolors [-h] [--filter FILTER]
 
@@ -156,7 +156,7 @@ optional arguments:
 ```
 
 
-### subcommand template
+### Template
 ```
 usage: ps1 template [-h] [-t TEMPLATE_NAME] [-l]
 
