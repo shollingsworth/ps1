@@ -350,8 +350,24 @@ class Base(object):
     ):
         """
         Add Date week month day.
+        ::
+            Mon Sep 13
         """
         self.sections.append((self.DATE_WEEK_MONTH_DAY, color, title))
+        return self
+
+    def add_date_time_24hr(
+        self,
+        color: str = "",
+        title: str = "",
+    ):
+        """
+        Add the date/time, in 24-hour HH:MM:SS format.
+        ::
+            Mon Sep 13 10:28:40
+        """
+        val = " ".join([self.DATE_WEEK_MONTH_DAY, self.TIME_24])
+        self.sections.append((val, color, title))
         return self
 
     def add_shell_name(
@@ -372,6 +388,8 @@ class Base(object):
     ):
         """
         Add The time, in 24-hour HH:MM:SS format.
+        ::
+            10:28:40
         """
         self.sections.append((self.TIME_24, color, title))
         return self
@@ -383,6 +401,8 @@ class Base(object):
     ):
         """
         Add The time, in 12-hour HH:MM:SS format.
+        ::
+            10:28:40
         """
         self.sections.append((self.TIME_12HR_W_SECOND, color, title))
         return self
@@ -394,6 +414,8 @@ class Base(object):
     ):
         """
         Add The time, in 12-hour am/pm format.
+        ::
+            10:28 AM
         """
         self.sections.append((self.TIME_12HR_AM_PM, color, title))
         return self

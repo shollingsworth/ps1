@@ -1,6 +1,18 @@
+# v0.0.8
+#### Added too_many_options example
+> 2021-09-13 17:43 UTC [HEAD](https://github.com/shollingsworth/ps1/commit/HEAD)
+
+```
+Added option
+    --add_date_time_24hr color title
+```
+#### Updated format of readme
+> 2021-09-13 17:00 UTC [0d7b0ea](https://github.com/shollingsworth/ps1/commit/0d7b0eaa2d27a9253cffcf5df991f6899dcfe8dd)
+
+---
 # v0.0.7
 #### Added a bunch of bash native ps1api class options
-> 2021-09-13 16:55 UTC [HEAD](https://github.com/shollingsworth/ps1/commit/HEAD)
+> 2021-09-13 16:56 UTC [bd207ca](https://github.com/shollingsworth/ps1/commit/bd207caadddbd33eff5b9e1ae3892170bc7c887b)
 
 ```
 added stev0_work example

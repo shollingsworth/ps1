@@ -18,9 +18,9 @@ ps1 \
     --set_prompt_color "white" \
     --add_exit_code "✔" "✘" "green" "red_1" "" \
     --add_custom '$(_shentropy)' "" "entropy" \
+    --add_date_time_24hr "green" "" \
     --add_jobs "red_1" "jobs" \
     --add_cmd_num "red_1" "cmd#" \
-    --add_time_24 "green" "" \
     --add_newline \
     --add_working_directory "${_c2}" "" \
     --add_git_branch "light_yellow" "" \

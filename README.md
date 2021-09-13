@@ -44,7 +44,7 @@ export PS1="$(ps1 template -t parrot)"
 ### Custom
 ```
 usage: ps1 custom [-h] [--add_bash_ver color title] [--add_bash_ver_release color title] [--add_cmd_num color title]
-                        [--add_custom value color title] [--add_date_week_month_day color title]
+                        [--add_custom value color title] [--add_date_time_24hr color title] [--add_date_week_month_day color title]
                         [--add_exit_code ok_txt err_txt ok_color err_color title] [--add_git_branch color title]
                         [--add_hist_num color title] [--add_host color title] [--add_host_long color title] [--add_jobs color title]
                         [--add_newline] [--add_shell_name color title] [--add_term_base color title]
@@ -64,8 +64,14 @@ optional arguments:
                         Add Number of commands this terminal has run.
   --add_custom value color title
                         Add custom section value/color.
+  --add_date_time_24hr color title
+                        Add the date/time, in 24-hour HH:MM:SS format.
+                        ::
+                            Mon Sep 13 10:28:40
   --add_date_week_month_day color title
                         Add Date week month day.
+                        ::
+                            Mon Sep 13
   --add_exit_code ok_txt err_txt ok_color err_color title
                         Add Exit code indicator to prompt.
   --add_git_branch color title
@@ -85,10 +91,16 @@ optional arguments:
                         Add The basename of the shell's terminal device name.
   --add_time_12hr_am_pm color title
                         Add The time, in 12-hour am/pm format.
+                        ::
+                            10:28 AM
   --add_time_12hr_with_second color title
                         Add The time, in 12-hour HH:MM:SS format.
+                        ::
+                            10:28:40
   --add_time_24 color title
                         Add The time, in 24-hour HH:MM:SS format.
+                        ::
+                            10:28:40
   --add_user color title
                         Add PS1 user expansion value.
   --add_user_host user_color at_sym_color host_color
@@ -204,6 +216,10 @@ optional arguments:
 
 ### [stev0_work.sh](https://github.com/shollingsworth/ps1/blob/main/src/ps1api/examples/dark/stev0_work.sh)
 ![stev0_work.sh](https://raw.githubusercontent.com/shollingsworth/ps1/main/media/dark/stev0_work.sh.png)
+
+
+### [too_many_options.sh](https://github.com/shollingsworth/ps1/blob/main/src/ps1api/examples/dark/too_many_options.sh)
+![too_many_options.sh](https://raw.githubusercontent.com/shollingsworth/ps1/main/media/dark/too_many_options.sh.png)
 
 
 ### [fire_ice.sh](https://github.com/shollingsworth/ps1/blob/main/src/ps1api/examples/light/fire_ice.sh)
