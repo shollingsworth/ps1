@@ -29,12 +29,53 @@ class Base(object):
 
     USER = r"\u"
     """PS1 user expansion value."""
+
     HOST = r"\h"
     """PS1 host expansion value."""
+
+    HOST_LONG = r"\H"
+    """PS1 host expansion value."""
+
     WORKING_DIR = r"\w"
     """PS1 working directory expansion value."""
-    PROMPT = "$ " if os.getuid() != 0 else "# "
+
+    PROMPT = r"\$ "
     """PS1 prompt for regular user / root user."""
+
+    TERM_BASE = r"\l"
+    """The basename of the shell's terminal device name."""
+
+    JOBS = r"\j"
+    """The number of jobs currently managed by the shell."""
+
+    HIST_NUM = r"\!"
+    """History count."""
+
+    CMD_NUM = r"\#"
+    """Number of commands this terminal has run."""
+
+    DATE_WEEK_MONTH_DAY = r"\d"
+    """Date week month day."""
+
+    SHELL_NAME = r"\s"
+    """The name of the shell, the basename of $0 (the portion following the final slash)."""
+
+    TIME_24 = r"\t"
+    """The time, in 24-hour HH:MM:SS format."""
+
+    TIME_12HR_W_SECOND = r"\T"
+    """The time, in 12-hour HH:MM:SS format."""
+
+    TIME_12HR_AM_PM = r"\@"
+    """The time, in 12-hour am/pm format."""
+
+    BASH_VER = r"\v"
+    """The version of Bash (e.g., 2.00)."""
+    BASH_VER_RELEASE = r"\V"
+    """The release of Bash, version + patchlevel (e.g., 2.00.0)."""
+
+    WORKING_DIR_BASENAME = r"\W"
+    """The basename of $PWD."""
 
     def __init__(self):
         """Initialize class."""
@@ -42,7 +83,8 @@ class Base(object):
         self.set_ends()
         self.set_prompt_color()
         self.set_section_delim()
-        self.set_fancy_lines(False)
+        self.fancy_lines = False
+        """Turn on Fancy lines."""
         self.set_no_color(False)
         self.sections = []
         """Sections list."""
@@ -59,7 +101,7 @@ class Base(object):
         self.no_color = value
         """Disable color from PS1 prompt."""
 
-    def set_fancy_lines(self, value=True):
+    def set_fancy_lines(self):
         """
         Set fancy line breaks like the following
         ::
@@ -67,8 +109,7 @@ class Base(object):
             ├───
             └──╼
         """
-        self.fancy_lines = value
-        """Turn on Fancy lines."""
+        self.fancy_lines = True
 
     def set_section_delim(self, delim="-"):
         """
@@ -152,14 +193,14 @@ class Base(object):
         """Section suffix."""
         return self
 
-    def add_custom(self, value: str, color: str):
+    def add_custom(self, value: str, color: str, title: str = None):
         """Add custom section value/color."""
-        self.sections.append((value, color))
+        self.sections.append((value, color, title))
         return self
 
     def add_newline(self):
         """Insert newline."""
-        self.sections.append(("__NL__", None))
+        self.sections.append(("__NL__", None, None))
         return self
 
     def add_user_host(
@@ -179,12 +220,13 @@ class Base(object):
         sect.append(self.color(at_sym_color, "@"))
         sect.append(self.color(host_color, self.HOST))
         val = "".join(sect)
-        self.sections.append((val, None))
+        self.sections.append((val, None, None))
         return self
 
     def add_working_directory(
         self,
         color: str = "light_green",
+        title: str = "",
     ):
         """
         Add Working directory to prompt.
@@ -192,18 +234,19 @@ class Base(object):
             [user@hostame]─[~/path/i/am/in]
                              ^ add this
         """
-        self.sections.append((self.WORKING_DIR, color))
+        self.sections.append((self.WORKING_DIR, color, title))
         return self
 
     def add_git_branch(
         self,
         color: str = "light_yellow",
+        title: str = "",
     ):
         """
         Add git branch to prompt.
         """
         val = r"""$(br=$(git branch 2>/dev/null| grep '^\*' | awk '{print $NF}'); [[ "${br}" ]] && echo "${br}" || echo "-")"""
-        self.sections.append((val, color))
+        self.sections.append((val, color, title))
         return self
 
     def add_exit_code(
@@ -214,25 +257,199 @@ class Base(object):
         err_txt: str = "✘",
         ok_color: str = "light_green",
         err_color: str = "red_1",
+        title: str = "",
     ):
         """Add Exit code indicator to prompt."""
         ok = self.color(ok_color, ok_txt)
         err = self.color(err_color, err_txt)
         val = f'$(b_err_code=$?; [[ $b_err_code != 0 ]] && echo "{err}/${{b_err_code}}" || echo "{ok}")'
-        self.sections.append((val, None))
+        self.sections.append((val, None, title))
+        return self
+
+    def add_user(
+        self,
+        color: str = "",
+        title: str = "",
+    ):
+        """
+        Add PS1 user expansion value.
+        """
+        self.sections.append((self.USER, color, title))
+        return self
+
+    def add_host(
+        self,
+        color: str = "",
+        title: str = "",
+    ):
+        """
+        Add PS1 host expansion value.
+        """
+        self.sections.append((self.HOST, color, title))
+        return self
+
+    def add_host_long(
+        self,
+        color: str = "",
+        title: str = "",
+    ):
+        """
+        Add PS1 host expansion value.
+        """
+        self.sections.append((self.HOST_LONG, color, title))
+        return self
+
+    def add_term_base(
+        self,
+        color: str = "",
+        title: str = "",
+    ):
+        """
+        Add The basename of the shell's terminal device name.
+        """
+        self.sections.append((self.TERM_BASE, color, title))
+        return self
+
+    def add_jobs(
+        self,
+        color: str = "",
+        title: str = "",
+    ):
+        """
+        Add The number of jobs currently managed by the shell.
+        """
+        self.sections.append((self.JOBS, color, title))
+        return self
+
+    def add_hist_num(
+        self,
+        color: str = "",
+        title: str = "",
+    ):
+        """
+        Add History count.
+        """
+        self.sections.append((self.HIST_NUM, color, title))
+        return self
+
+    def add_cmd_num(
+        self,
+        color: str = "",
+        title: str = "",
+    ):
+        """
+        Add Number of commands this terminal has run.
+        """
+        self.sections.append((self.CMD_NUM, color, title))
+        return self
+
+    def add_date_week_month_day(
+        self,
+        color: str = "",
+        title: str = "",
+    ):
+        """
+        Add Date week month day.
+        """
+        self.sections.append((self.DATE_WEEK_MONTH_DAY, color, title))
+        return self
+
+    def add_shell_name(
+        self,
+        color: str = "",
+        title: str = "",
+    ):
+        """
+        Add The name of the shell, the basename of $0 (the portion following the final slash).
+        """
+        self.sections.append((self.SHELL_NAME, color, title))
+        return self
+
+    def add_time_24(
+        self,
+        color: str = "",
+        title: str = "",
+    ):
+        """
+        Add The time, in 24-hour HH:MM:SS format.
+        """
+        self.sections.append((self.TIME_24, color, title))
+        return self
+
+    def add_time_12hr_with_second(
+        self,
+        color: str = "",
+        title: str = "",
+    ):
+        """
+        Add The time, in 12-hour HH:MM:SS format.
+        """
+        self.sections.append((self.TIME_12HR_W_SECOND, color, title))
+        return self
+
+    def add_time_12hr_am_pm(
+        self,
+        color: str = "",
+        title: str = "",
+    ):
+        """
+        Add The time, in 12-hour am/pm format.
+        """
+        self.sections.append((self.TIME_12HR_AM_PM, color, title))
+        return self
+
+    def add_bash_ver(
+        self,
+        color: str = "",
+        title: str = "",
+    ):
+        """
+        Add The version of Bash (e.g., 2.00).
+        """
+        self.sections.append((self.BASH_VER, color, title))
+        return self
+
+    def add_bash_ver_release(
+        self,
+        color: str = "",
+        title: str = "",
+    ):
+        """
+        Add The release of Bash, version + patchlevel (e.g., 2.00.0).
+        """
+        self.sections.append((self.BASH_VER_RELEASE, color, title))
+        return self
+
+    def add_working_dir_basename(
+        self,
+        color: str = "",
+        title: str = "",
+    ):
+        """
+        Add The basename of $PWD.
+        """
+        self.sections.append((self.WORKING_DIR_BASENAME, color, title))
         return self
 
     def output(self):
         """Output / export PS1 value."""
         sep = self.color(self.section_color, self.delim)
         mod_lines = []
-        for val, color in self.sections:
+        for val, color, title in self.sections:
             if val == "__NL__":
                 mod_lines.append(val)
             elif not color:
-                mod_lines.append(self._sammy(val))
+                if title:
+                    ival = f"{title}:{val}"
+                else:
+                    ival = val
+                mod_lines.append(self._sammy(ival))
             else:
-                mod_lines.append(self._sammy(self.color(color, val)))
+                if title:
+                    ival = f"{title}:{self.color(color, val)}"
+                else:
+                    ival = self.color(color, val)
+                mod_lines.append(self._sammy(ival))
 
         f_start = self.color(self.section_color, "┌──")
         f_mid = self.color(self.section_color, "├──")

@@ -43,42 +43,67 @@ export PS1="$(ps1 template -t parrot)"
 ## PS1 Command [&#8593;](#toc)
 ### subcommand custom
 ```
-usage: ps1 custom [-h] [--add_custom [ADD_CUSTOM ...]] [--add_exit_code [ADD_EXIT_CODE ...]]
-                        [--add_git_branch [ADD_GIT_BRANCH ...]] [--add_newline [ADD_NEWLINE ...]]
-                        [--add_user_host [ADD_USER_HOST ...]] [--add_working_directory [ADD_WORKING_DIRECTORY ...]]
-                        [--set_ends [SET_ENDS ...]] [--set_fancy_lines [SET_FANCY_LINES ...]] [--set_no_color [SET_NO_COLOR ...]]
-                        [--set_prompt_color [SET_PROMPT_COLOR ...]] [--set_section_color [SET_SECTION_COLOR ...]]
-                        [--set_section_delim [SET_SECTION_DELIM ...]]
+usage: ps1 custom [-h] [--add_bash_ver color title] [--add_bash_ver_release color title] [--add_cmd_num color title]
+                        [--add_custom value color title] [--add_date_week_month_day color title]
+                        [--add_exit_code ok_txt err_txt ok_color err_color title] [--add_git_branch color title]
+                        [--add_hist_num color title] [--add_host color title] [--add_host_long color title] [--add_jobs color title]
+                        [--add_newline] [--add_shell_name color title] [--add_term_base color title]
+                        [--add_time_12hr_am_pm color title] [--add_time_12hr_with_second color title] [--add_time_24 color title]
+                        [--add_user color title] [--add_user_host user_color at_sym_color host_color]
+                        [--add_working_dir_basename color title] [--add_working_directory color title] [--set_ends start end]
+                        [--set_fancy_lines] [--set_no_color value] [--set_prompt_color color] [--set_section_color color]
+                        [--set_section_delim delim]
 
 optional arguments:
   -h, --help            show this help message and exit
-  --add_custom [ADD_CUSTOM ...]
-                        ARGS:value,color
+  --add_bash_ver color title
+                        Add The version of Bash (e.g., 2.00).
+  --add_bash_ver_release color title
+                        Add The release of Bash, version + patchlevel (e.g., 2.00.0).
+  --add_cmd_num color title
+                        Add Number of commands this terminal has run.
+  --add_custom value color title
                         Add custom section value/color.
-  --add_exit_code [ADD_EXIT_CODE ...]
-                        ARGS:ok_txt,err_txt,ok_color,err_color
+  --add_date_week_month_day color title
+                        Add Date week month day.
+  --add_exit_code ok_txt err_txt ok_color err_color title
                         Add Exit code indicator to prompt.
-  --add_git_branch [ADD_GIT_BRANCH ...]
-                        ARGS:color
+  --add_git_branch color title
                         Add git branch to prompt.
-  --add_newline [ADD_NEWLINE ...]
-                        ARGS:None
-                        Insert newline.
-  --add_user_host [ADD_USER_HOST ...]
-                        ARGS:user_color,at_sym_color,host_color
+  --add_hist_num color title
+                        Add History count.
+  --add_host color title
+                        Add PS1 host expansion value.
+  --add_host_long color title
+                        Add PS1 host expansion value.
+  --add_jobs color title
+                        Add The number of jobs currently managed by the shell.
+  --add_newline         Insert newline.
+  --add_shell_name color title
+                        Add The name of the shell, the basename of $0 (the portion following the final slash).
+  --add_term_base color title
+                        Add The basename of the shell's terminal device name.
+  --add_time_12hr_am_pm color title
+                        Add The time, in 12-hour am/pm format.
+  --add_time_12hr_with_second color title
+                        Add The time, in 12-hour HH:MM:SS format.
+  --add_time_24 color title
+                        Add The time, in 24-hour HH:MM:SS format.
+  --add_user color title
+                        Add PS1 user expansion value.
+  --add_user_host user_color at_sym_color host_color
                         Add User/Host to prompt.
                         ::
                             [user@hostname]-[section2]
                                   ^ add this
-  --add_working_directory [ADD_WORKING_DIRECTORY ...]
-                        ARGS:color
+  --add_working_dir_basename color title
+                        Add The basename of $PWD.
+  --add_working_directory color title
                         Add Working directory to prompt.
                         ::
                             [user@hostame]─[~/path/i/am/in]
                                              ^ add this
-  --set_ends [SET_ENDS ...]
-                        ARGS:start,end
-                        Set Section start / end values.
+  --set_ends start end  Set Section start / end values.
                         ::
                             {}
                             {section1}-{section2}
@@ -88,26 +113,19 @@ optional arguments:
                         
                             ❰❱
                             ❰section1❱-❰section2❱
-  --set_fancy_lines [SET_FANCY_LINES ...]
-                        ARGS:value
-                        Set fancy line breaks like the following
+  --set_fancy_lines     Set fancy line breaks like the following
                         ::
                             ┌───
                             ├───
                             └──╼
-  --set_no_color [SET_NO_COLOR ...]
-                        ARGS:value
-                        Set terminal to no color.
-  --set_prompt_color [SET_PROMPT_COLOR ...]
-                        ARGS:color
+  --set_no_color value  Set terminal to no color.
+  --set_prompt_color color
                         Set prompt color.
                         ::
                             i.e. $ or # depending on user
-  --set_section_color [SET_SECTION_COLOR ...]
-                        ARGS:color
+  --set_section_color color
                         Set default section color.
-  --set_section_delim [SET_SECTION_DELIM ...]
-                        ARGS:delim
+  --set_section_delim delim
                         Set section separator.
                         ::
                             i.e. [section1]-[section2]
@@ -128,11 +146,11 @@ optional arguments:
 
 ### subcommand listcolors
 ```
-usage: ps1 listcolors [-h] [--filter [FILTER ...]]
+usage: ps1 listcolors [-h] [--filter FILTER]
 
 optional arguments:
   -h, --help            show this help message and exit
-  --filter [FILTER ...], -f [FILTER ...]
+  --filter FILTER, -f FILTER
                         Filter color values
 
 ```
@@ -182,6 +200,10 @@ optional arguments:
 
 ### [skulls.sh](https://github.com/shollingsworth/ps1/blob/main/src/ps1api/examples/dark/skulls.sh)
 ![skulls.sh](https://raw.githubusercontent.com/shollingsworth/ps1/main/media/dark/skulls.sh.png)
+
+
+### [stev0_work.sh](https://github.com/shollingsworth/ps1/blob/main/src/ps1api/examples/dark/stev0_work.sh)
+![stev0_work.sh](https://raw.githubusercontent.com/shollingsworth/ps1/main/media/dark/stev0_work.sh.png)
 
 
 ### [fire_ice.sh](https://github.com/shollingsworth/ps1/blob/main/src/ps1api/examples/light/fire_ice.sh)

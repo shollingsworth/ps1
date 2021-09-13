@@ -14,10 +14,9 @@ ps1 \
     --set_ends "❰" "❱" \
     --set_section_delim "━" \
     --add_exit_code \
-    --add_custom 'entropy:$(_shentropy)' "" \
+    --add_custom '$(_shentropy)' "" "entropy" \
     --add_git_branch \
     --add_newline \
     --add_working_directory \
     --add_newline \
-
 )

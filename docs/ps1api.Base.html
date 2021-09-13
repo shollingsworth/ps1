@@ -58,6 +58,11 @@
   </tr><tr class="classvariable">
     
     <td>Class Variable</td>
+    <td><code><a href="#HOST_LONG">HOST_LONG</a></code></td>
+    <td><span>PS1 host expansion value.</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
     <td><code><a href="#WORKING_DIR">WORKING_DIR</a></code></td>
     <td><span>PS1 working directory expansion value.</span></td>
   </tr><tr class="classvariable">
@@ -65,11 +70,76 @@
     <td>Class Variable</td>
     <td><code><a href="#PROMPT">PROMPT</a></code></td>
     <td><span>PS1 prompt for regular user / root user.</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#TERM_BASE">TERM_BASE</a></code></td>
+    <td><span>The basename of the shell's terminal device name.</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#JOBS">JOBS</a></code></td>
+    <td><span>The number of jobs currently managed by the shell.</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#HIST_NUM">HIST_NUM</a></code></td>
+    <td><span>History count.</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#CMD_NUM">CMD_NUM</a></code></td>
+    <td><span>Number of commands this terminal has run.</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#DATE_WEEK_MONTH_DAY">DATE_WEEK_MONTH_DAY</a></code></td>
+    <td><span>Date week month day.</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#SHELL_NAME">SHELL_NAME</a></code></td>
+    <td><span>The name of the shell, the basename of $0 (the portion following the final slash).</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#TIME_24">TIME_24</a></code></td>
+    <td><span>The time, in 24-hour HH:MM:SS format.</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#TIME_12HR_W_SECOND">TIME_12HR_W_SECOND</a></code></td>
+    <td><span>The time, in 12-hour HH:MM:SS format.</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#TIME_12HR_AM_PM">TIME_12HR_AM_PM</a></code></td>
+    <td><span>The time, in 12-hour am/pm format.</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#BASH_VER">BASH_VER</a></code></td>
+    <td><span>The version of Bash (e.g., 2.00).</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#BASH_VER_RELEASE">BASH_VER_RELEASE</a></code></td>
+    <td><span>The release of Bash, version + patchlevel (e.g., 2.00.0).</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#WORKING_DIR_BASENAME">WORKING_DIR_BASENAME</a></code></td>
+    <td><span>The basename of $PWD.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#__init__">__init__</a></code></td>
     <td><span>Initialize class.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#fancy_lines">fancy_lines</a></code></td>
+    <td><span>Turn on Fancy lines.</span></td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
@@ -90,11 +160,6 @@
     <td>Method</td>
     <td><code><a href="#set_fancy_lines">set_fancy_lines</a></code></td>
     <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="#fancy_lines">fancy_lines</a></code></td>
-    <td><span>Turn on Fancy lines.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -183,6 +248,81 @@
   </tr><tr class="method">
     
     <td>Method</td>
+    <td><code><a href="#add_user">add_user</a></code></td>
+    <td><span>Add PS1 user expansion value.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#add_host">add_host</a></code></td>
+    <td><span>Add PS1 host expansion value.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#add_host_long">add_host_long</a></code></td>
+    <td><span>Add PS1 host expansion value.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#add_term_base">add_term_base</a></code></td>
+    <td><span>Add The basename of the shell's terminal device name.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#add_jobs">add_jobs</a></code></td>
+    <td><span>Add The number of jobs currently managed by the shell.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#add_hist_num">add_hist_num</a></code></td>
+    <td><span>Add History count.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#add_cmd_num">add_cmd_num</a></code></td>
+    <td><span>Add Number of commands this terminal has run.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#add_date_week_month_day">add_date_week_month_day</a></code></td>
+    <td><span>Add Date week month day.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#add_shell_name">add_shell_name</a></code></td>
+    <td><span>Add The name of the shell, the basename of $0 (the portion following the final slash).</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#add_time_24">add_time_24</a></code></td>
+    <td><span>Add The time, in 24-hour HH:MM:SS format.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#add_time_12hr_with_second">add_time_12hr_with_second</a></code></td>
+    <td><span>Add The time, in 12-hour HH:MM:SS format.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#add_time_12hr_am_pm">add_time_12hr_am_pm</a></code></td>
+    <td><span>Add The time, in 12-hour am/pm format.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#add_bash_ver">add_bash_ver</a></code></td>
+    <td><span>Add The version of Bash (e.g., 2.00).</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#add_bash_ver_release">add_bash_ver_release</a></code></td>
+    <td><span>Add The release of Bash, version + patchlevel (e.g., 2.00.0).</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#add_working_dir_basename">add_working_dir_basename</a></code></td>
+    <td><span>Add The basename of $PWD.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
     <td><code><a href="#output">output</a></code></td>
     <td><span>Output / export PS1 value.</span></td>
   </tr><tr class="method private">
@@ -242,6 +382,24 @@
   </div>
 </div><div class="baseclassvariable">
   
+  <a name="ps1api.Base.HOST_LONG">
+    
+  </a>
+  <a name="HOST_LONG">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">HOST_LONG</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>PS1 host expansion value.</p></div> (type: <code>str</code>)
+  </div>
+</div><div class="baseclassvariable">
+  
   <a name="ps1api.Base.WORKING_DIR">
     
   </a>
@@ -274,7 +432,223 @@
   <div class="functionBody">
     
     
-    <div><p>PS1 prompt for regular user / root user.</p></div>
+    <div><p>PS1 prompt for regular user / root user.</p></div> (type: <code>str</code>)
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="ps1api.Base.TERM_BASE">
+    
+  </a>
+  <a name="TERM_BASE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">TERM_BASE</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>The basename of the shell's terminal device name.</p></div> (type: <code>str</code>)
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="ps1api.Base.JOBS">
+    
+  </a>
+  <a name="JOBS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">JOBS</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>The number of jobs currently managed by the shell.</p></div> (type: <code>str</code>)
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="ps1api.Base.HIST_NUM">
+    
+  </a>
+  <a name="HIST_NUM">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">HIST_NUM</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>History count.</p></div> (type: <code>str</code>)
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="ps1api.Base.CMD_NUM">
+    
+  </a>
+  <a name="CMD_NUM">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">CMD_NUM</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>Number of commands this terminal has run.</p></div> (type: <code>str</code>)
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="ps1api.Base.DATE_WEEK_MONTH_DAY">
+    
+  </a>
+  <a name="DATE_WEEK_MONTH_DAY">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">DATE_WEEK_MONTH_DAY</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>Date week month day.</p></div> (type: <code>str</code>)
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="ps1api.Base.SHELL_NAME">
+    
+  </a>
+  <a name="SHELL_NAME">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">SHELL_NAME</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>The name of the shell, the basename of $0 (the portion following the final slash).</p></div> (type: <code>str</code>)
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="ps1api.Base.TIME_24">
+    
+  </a>
+  <a name="TIME_24">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">TIME_24</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>The time, in 24-hour HH:MM:SS format.</p></div> (type: <code>str</code>)
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="ps1api.Base.TIME_12HR_W_SECOND">
+    
+  </a>
+  <a name="TIME_12HR_W_SECOND">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">TIME_12HR_W_SECOND</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>The time, in 12-hour HH:MM:SS format.</p></div> (type: <code>str</code>)
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="ps1api.Base.TIME_12HR_AM_PM">
+    
+  </a>
+  <a name="TIME_12HR_AM_PM">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">TIME_12HR_AM_PM</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>The time, in 12-hour am/pm format.</p></div> (type: <code>str</code>)
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="ps1api.Base.BASH_VER">
+    
+  </a>
+  <a name="BASH_VER">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">BASH_VER</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>The version of Bash (e.g., 2.00).</p></div> (type: <code>str</code>)
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="ps1api.Base.BASH_VER_RELEASE">
+    
+  </a>
+  <a name="BASH_VER_RELEASE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">BASH_VER_RELEASE</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>The release of Bash, version + patchlevel (e.g., 2.00.0).</p></div> (type: <code>str</code>)
+  </div>
+</div><div class="baseclassvariable">
+  
+  <a name="ps1api.Base.WORKING_DIR_BASENAME">
+    
+  </a>
+  <a name="WORKING_DIR_BASENAME">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">WORKING_DIR_BASENAME</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>The basename of $PWD.</p></div> (type: <code>str</code>)
   </div>
 </div><div class="basemethod">
   
@@ -293,6 +667,24 @@
     
     
     <div><p>Initialize class.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="ps1api.Base.fancy_lines">
+    
+  </a>
+  <a name="fancy_lines">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">fancy_lines</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>Turn on Fancy lines.</p></div> (type: <code>bool</code>)
   </div>
 </div><div class="baseinstancevariable">
   
@@ -376,7 +768,7 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">set_fancy_lines</span>(self, value=True):
+    <span class="py-keyword">def</span> <span class="py-defname">set_fancy_lines</span>(self):
     
   </div>
   <div class="docstring functionBody">
@@ -387,24 +779,6 @@
     ├───
     └──╼
 </pre></div>
-  </div>
-</div><div class="baseinstancevariable">
-  
-  <a name="ps1api.Base.fancy_lines">
-    
-  </a>
-  <a name="fancy_lines">
-    
-  </a>
-  <div class="functionHeader">
-    
-    <span class="py-defname">fancy_lines</span> =
-    
-  </div>
-  <div class="functionBody">
-    
-    
-    <div><p>Turn on Fancy lines.</p></div>
   </div>
 </div><div class="basemethod">
   
@@ -646,13 +1020,13 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">add_custom</span>(self, value, color):
+    <span class="py-keyword">def</span> <span class="py-defname">add_custom</span>(self, value, color, title=None):
     
   </div>
   <div class="docstring functionBody">
     
     
-    <div><p>Add custom section value/color.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">value</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr><tr><td></td><td class="fieldArg">color</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr></table></div>
+    <div><p>Add custom section value/color.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">value</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr><tr><td></td><td class="fieldArg">color</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr><tr><td></td><td class="fieldArg">title</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -703,7 +1077,7 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">add_working_directory</span>(self, color='light_green'):
+    <span class="py-keyword">def</span> <span class="py-defname">add_working_directory</span>(self, color='light_green', title=''):
     
   </div>
   <div class="docstring functionBody">
@@ -712,7 +1086,7 @@
     <div><p>Add Working directory to prompt. :</p><pre class="literalblock">
     [user@hostame]─[~/path/i/am/in]
                      ^ add this
-</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">color</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr></table></div>
+</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">color</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr><tr><td></td><td class="fieldArg">title</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -724,13 +1098,13 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">add_git_branch</span>(self, color='light_yellow'):
+    <span class="py-keyword">def</span> <span class="py-defname">add_git_branch</span>(self, color='light_yellow', title=''):
     
   </div>
   <div class="docstring functionBody">
     
     
-    <div><p>Add git branch to prompt.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">color</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr></table></div>
+    <div><p>Add git branch to prompt.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">color</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr><tr><td></td><td class="fieldArg">title</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -742,13 +1116,283 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">add_exit_code</span>(self, ok_txt='✔', err_txt='✘', ok_color='light_green', err_color='red_1'):
+    <span class="py-keyword">def</span> <span class="py-defname">add_exit_code</span>(self, ok_txt='✔', err_txt='✘', ok_color='light_green', err_color='red_1', title=''):
     
   </div>
   <div class="docstring functionBody">
     
     
-    <div><p>Add Exit code indicator to prompt.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">ok_txt</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr><tr><td></td><td class="fieldArg">err_txt</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr><tr><td></td><td class="fieldArg">ok_color</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr><tr><td></td><td class="fieldArg">err_color</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr></table></div>
+    <div><p>Add Exit code indicator to prompt.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">ok_txt</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr><tr><td></td><td class="fieldArg">err_txt</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr><tr><td></td><td class="fieldArg">ok_color</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr><tr><td></td><td class="fieldArg">err_color</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr><tr><td></td><td class="fieldArg">title</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="ps1api.Base.add_user">
+    
+  </a>
+  <a name="add_user">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">add_user</span>(self, color='', title=''):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Add PS1 user expansion value.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">color</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr><tr><td></td><td class="fieldArg">title</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="ps1api.Base.add_host">
+    
+  </a>
+  <a name="add_host">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">add_host</span>(self, color='', title=''):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Add PS1 host expansion value.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">color</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr><tr><td></td><td class="fieldArg">title</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="ps1api.Base.add_host_long">
+    
+  </a>
+  <a name="add_host_long">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">add_host_long</span>(self, color='', title=''):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Add PS1 host expansion value.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">color</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr><tr><td></td><td class="fieldArg">title</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="ps1api.Base.add_term_base">
+    
+  </a>
+  <a name="add_term_base">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">add_term_base</span>(self, color='', title=''):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Add The basename of the shell's terminal device name.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">color</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr><tr><td></td><td class="fieldArg">title</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="ps1api.Base.add_jobs">
+    
+  </a>
+  <a name="add_jobs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">add_jobs</span>(self, color='', title=''):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Add The number of jobs currently managed by the shell.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">color</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr><tr><td></td><td class="fieldArg">title</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="ps1api.Base.add_hist_num">
+    
+  </a>
+  <a name="add_hist_num">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">add_hist_num</span>(self, color='', title=''):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Add History count.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">color</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr><tr><td></td><td class="fieldArg">title</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="ps1api.Base.add_cmd_num">
+    
+  </a>
+  <a name="add_cmd_num">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">add_cmd_num</span>(self, color='', title=''):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Add Number of commands this terminal has run.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">color</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr><tr><td></td><td class="fieldArg">title</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="ps1api.Base.add_date_week_month_day">
+    
+  </a>
+  <a name="add_date_week_month_day">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">add_date_week_month_day</span>(self, color='', title=''):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Add Date week month day.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">color</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr><tr><td></td><td class="fieldArg">title</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="ps1api.Base.add_shell_name">
+    
+  </a>
+  <a name="add_shell_name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">add_shell_name</span>(self, color='', title=''):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Add The name of the shell, the basename of $0 (the portion following the final slash).</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">color</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr><tr><td></td><td class="fieldArg">title</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="ps1api.Base.add_time_24">
+    
+  </a>
+  <a name="add_time_24">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">add_time_24</span>(self, color='', title=''):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Add The time, in 24-hour HH:MM:SS format.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">color</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr><tr><td></td><td class="fieldArg">title</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="ps1api.Base.add_time_12hr_with_second">
+    
+  </a>
+  <a name="add_time_12hr_with_second">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">add_time_12hr_with_second</span>(self, color='', title=''):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Add The time, in 12-hour HH:MM:SS format.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">color</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr><tr><td></td><td class="fieldArg">title</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="ps1api.Base.add_time_12hr_am_pm">
+    
+  </a>
+  <a name="add_time_12hr_am_pm">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">add_time_12hr_am_pm</span>(self, color='', title=''):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Add The time, in 12-hour am/pm format.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">color</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr><tr><td></td><td class="fieldArg">title</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="ps1api.Base.add_bash_ver">
+    
+  </a>
+  <a name="add_bash_ver">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">add_bash_ver</span>(self, color='', title=''):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Add The version of Bash (e.g., 2.00).</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">color</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr><tr><td></td><td class="fieldArg">title</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="ps1api.Base.add_bash_ver_release">
+    
+  </a>
+  <a name="add_bash_ver_release">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">add_bash_ver_release</span>(self, color='', title=''):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Add The release of Bash, version + patchlevel (e.g., 2.00.0).</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">color</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr><tr><td></td><td class="fieldArg">title</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="ps1api.Base.add_working_dir_basename">
+    
+  </a>
+  <a name="add_working_dir_basename">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">add_working_dir_basename</span>(self, color='', title=''):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Add The basename of $PWD.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">color</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr><tr><td></td><td class="fieldArg">title</td><td><span class="undocumented">Undocumented</span> (type: <code>str</code>)</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   

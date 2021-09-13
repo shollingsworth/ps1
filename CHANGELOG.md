@@ -1,6 +1,17 @@
+# v0.0.7
+#### Added a bunch of bash native ps1api class options
+> 2021-09-13 16:55 UTC [HEAD](https://github.com/shollingsworth/ps1/commit/HEAD)
+
+```
+added stev0_work example
+```
+#### Removed extra files
+> 2021-09-12 22:56 UTC [d1ee04a](https://github.com/shollingsworth/ps1/commit/d1ee04a4ea2c098262df3a53a125b5c9f55d861e)
+
+---
 # v0.0.6
 #### added ip example
-> 2021-09-12 22:53 UTC [HEAD](https://github.com/shollingsworth/ps1/commit/HEAD)
+> 2021-09-12 22:54 UTC [91dfb38](https://github.com/shollingsworth/ps1/commit/91dfb38225352336ce427e86d3286c205c4b343e)
 
 #### Updated example
 > 2021-09-12 22:23 UTC [803acd9](https://github.com/shollingsworth/ps1/commit/803acd9521d26e60a6e181632a6362830b8416e3)

@@ -71,6 +71,11 @@
   </tr><tr class="baseclassvariable">
     
     <td>Class Variable</td>
+    <td><code><a href="ps1api.Base.html#HOST_LONG">HOST_LONG</a></code></td>
+    <td><span>PS1 host expansion value.</span></td>
+  </tr><tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
     <td><code><a href="ps1api.Base.html#WORKING_DIR">WORKING_DIR</a></code></td>
     <td><span>PS1 working directory expansion value.</span></td>
   </tr><tr class="baseclassvariable">
@@ -78,11 +83,76 @@
     <td>Class Variable</td>
     <td><code><a href="ps1api.Base.html#PROMPT">PROMPT</a></code></td>
     <td><span>PS1 prompt for regular user / root user.</span></td>
+  </tr><tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="ps1api.Base.html#TERM_BASE">TERM_BASE</a></code></td>
+    <td><span>The basename of the shell's terminal device name.</span></td>
+  </tr><tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="ps1api.Base.html#JOBS">JOBS</a></code></td>
+    <td><span>The number of jobs currently managed by the shell.</span></td>
+  </tr><tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="ps1api.Base.html#HIST_NUM">HIST_NUM</a></code></td>
+    <td><span>History count.</span></td>
+  </tr><tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="ps1api.Base.html#CMD_NUM">CMD_NUM</a></code></td>
+    <td><span>Number of commands this terminal has run.</span></td>
+  </tr><tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="ps1api.Base.html#DATE_WEEK_MONTH_DAY">DATE_WEEK_MONTH_DAY</a></code></td>
+    <td><span>Date week month day.</span></td>
+  </tr><tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="ps1api.Base.html#SHELL_NAME">SHELL_NAME</a></code></td>
+    <td><span>The name of the shell, the basename of $0 (the portion following the final slash).</span></td>
+  </tr><tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="ps1api.Base.html#TIME_24">TIME_24</a></code></td>
+    <td><span>The time, in 24-hour HH:MM:SS format.</span></td>
+  </tr><tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="ps1api.Base.html#TIME_12HR_W_SECOND">TIME_12HR_W_SECOND</a></code></td>
+    <td><span>The time, in 12-hour HH:MM:SS format.</span></td>
+  </tr><tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="ps1api.Base.html#TIME_12HR_AM_PM">TIME_12HR_AM_PM</a></code></td>
+    <td><span>The time, in 12-hour am/pm format.</span></td>
+  </tr><tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="ps1api.Base.html#BASH_VER">BASH_VER</a></code></td>
+    <td><span>The version of Bash (e.g., 2.00).</span></td>
+  </tr><tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="ps1api.Base.html#BASH_VER_RELEASE">BASH_VER_RELEASE</a></code></td>
+    <td><span>The release of Bash, version + patchlevel (e.g., 2.00.0).</span></td>
+  </tr><tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="ps1api.Base.html#WORKING_DIR_BASENAME">WORKING_DIR_BASENAME</a></code></td>
+    <td><span>The basename of $PWD.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
     <td><code><a href="ps1api.Base.html#__init__">__init__</a></code></td>
     <td><span>Initialize class.</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="ps1api.Base.html#fancy_lines">fancy_lines</a></code></td>
+    <td><span>Turn on Fancy lines.</span></td>
   </tr><tr class="baseinstancevariable">
     
     <td>Instance Variable</td>
@@ -103,11 +173,6 @@
     <td>Method</td>
     <td><code><a href="ps1api.Base.html#set_fancy_lines">set_fancy_lines</a></code></td>
     <td><span class="undocumented">No summary</span></td>
-  </tr><tr class="baseinstancevariable">
-    
-    <td>Instance Variable</td>
-    <td><code><a href="ps1api.Base.html#fancy_lines">fancy_lines</a></code></td>
-    <td><span>Turn on Fancy lines.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -188,6 +253,81 @@
     <td>Method</td>
     <td><code><a href="ps1api.Base.html#add_exit_code">add_exit_code</a></code></td>
     <td><span>Add Exit code indicator to prompt.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#add_user">add_user</a></code></td>
+    <td><span>Add PS1 user expansion value.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#add_host">add_host</a></code></td>
+    <td><span>Add PS1 host expansion value.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#add_host_long">add_host_long</a></code></td>
+    <td><span>Add PS1 host expansion value.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#add_term_base">add_term_base</a></code></td>
+    <td><span>Add The basename of the shell's terminal device name.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#add_jobs">add_jobs</a></code></td>
+    <td><span>Add The number of jobs currently managed by the shell.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#add_hist_num">add_hist_num</a></code></td>
+    <td><span>Add History count.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#add_cmd_num">add_cmd_num</a></code></td>
+    <td><span>Add Number of commands this terminal has run.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#add_date_week_month_day">add_date_week_month_day</a></code></td>
+    <td><span>Add Date week month day.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#add_shell_name">add_shell_name</a></code></td>
+    <td><span>Add The name of the shell, the basename of $0 (the portion following the final slash).</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#add_time_24">add_time_24</a></code></td>
+    <td><span>Add The time, in 24-hour HH:MM:SS format.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#add_time_12hr_with_second">add_time_12hr_with_second</a></code></td>
+    <td><span>Add The time, in 12-hour HH:MM:SS format.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#add_time_12hr_am_pm">add_time_12hr_am_pm</a></code></td>
+    <td><span>Add The time, in 12-hour am/pm format.</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#add_bash_ver">add_bash_ver</a></code></td>
+    <td><span>Add The version of Bash (e.g., 2.00).</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#add_bash_ver_release">add_bash_ver_release</a></code></td>
+    <td><span>Add The release of Bash, version + patchlevel (e.g., 2.00.0).</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="ps1api.Base.html#add_working_dir_basename">add_working_dir_basename</a></code></td>
+    <td><span>Add The basename of $PWD.</span></td>
   </tr><tr class="basemethod">
     
     <td>Method</td>

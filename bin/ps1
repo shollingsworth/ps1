@@ -32,6 +32,13 @@ class SmartFormatter(argparse.HelpFormatter):
         # this is the RawTextHelpFormatter._split_lines
         return argparse.HelpFormatter._split_lines(self, text, width)
 
+    def _format_args(self, action, default_metavar):
+        get_metavar = self._metavar_formatter(action, default_metavar)
+        if action.nargs == argparse.ZERO_OR_MORE:
+            return "%s" % get_metavar(1)
+        else:
+            return super(SmartFormatter, self)._format_args(action, default_metavar)
+
 
 class CustomAction(argparse.Action):
     def __call__(self, parser, namespace, values, option_string=None):
@@ -42,7 +49,7 @@ class CustomAction(argparse.Action):
         setattr(namespace, "ordered_args", previous)
 
 
-def run_show_examples(args):
+def run_show_examples(_):
     for path, content in ps1api.iter_examples():
         print("#" * 82)
         print(f"source {path}")
@@ -160,8 +167,10 @@ def _get_parser(template_map, Base):
 
         custom.add_argument(
             f"--{i}",
+            default=defaults,
             nargs="*",
-            help=f"R|ARGS:{','.join(args) if args else 'None'}\n{dstr}",
+            help=f"R|{dstr}",
+            metavar=" ".join(args),
             action=CustomAction,
         )
     return parser
