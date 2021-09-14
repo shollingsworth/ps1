@@ -79,9 +79,17 @@ class Base(object):
     def __init__(self):
         """Initialize class."""
         self.set_section_color()
+
+        self.delim_color = self.section_color
+        """Delimiter color."""
+
         self.set_ends()
         self.set_prompt_color()
         self.set_section_delim()
+
+        # https://superuser.com/a/609940
+        self.ps1_escape = True
+        """Escape non-printable sequences to prevent prompt breakage."""
 
         self.title_color = None
         """Title color."""
@@ -101,6 +109,10 @@ class Base(object):
         ansi_escape = re.compile(r"\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])")
         return ansi_escape.sub("", value)
 
+    def set_no_ps1_escape(self):
+        """For prompt debugging, set an option to not escape the unicode and non-printable chars."""
+        self.ps1_escape = False
+
     def set_title_color(self, value: str):
         """Set title color."""
         self.title_color = value
@@ -119,6 +131,10 @@ class Base(object):
             └──╼
         """
         self.fancy_lines = True
+
+    def set_delim_color(self, value):
+        """Set Delimiter color."""
+        self.delim_color = value
 
     def set_section_delim(self, delim="-"):
         """
@@ -144,8 +160,7 @@ class Base(object):
         self.prompt_color = color
         """PS1 Prompt $/# color."""
 
-    @classmethod
-    def color(cls, cval: str, txt, escape=True):
+    def color(self, cval: str, txt, escape=True):
         """Abstracted color class."""
         fg_name = None
         bg_name = None
@@ -170,7 +185,7 @@ class Base(object):
         _bg = bg(bg_name) if bg_name else ""
         attr_str = "".join([attr(attr_name) for attr_name in attrs])
         end_val = attr("reset")
-        if escape:
+        if escape and self.ps1_escape:
             _fg = "\\[%s\\]" % _fg if _fg else ""
             _bg = "\\[%s\\]" % _bg if _bg else ""
             attr_str = "\\[%s\\]" % attr_str if attr_str else ""
@@ -207,11 +222,6 @@ class Base(object):
             ❰section1❱-❰section2❱
         """
 
-        def _repl_brackets(val):
-            """Replace brackets with octal to avoid confusion."""
-            return val.replace("]", r"\135").replace("[", r"\133")
-
-        start, end = map(_repl_brackets, [start, end])
         self.section_prefix = start
         """Section prefix."""
         self.section_suffix = end
@@ -480,7 +490,7 @@ class Base(object):
 
     def output(self):
         """Output / export PS1 value."""
-        sep = self.color(self.section_color, self.delim)
+        sep = self.color(self.delim_color, self.delim)
         mod_lines = []
         for val, color, title in self.sections:
             if val == "__NL__":
@@ -544,7 +554,8 @@ class Base(object):
                     enc = b"\0" + enc
                 return "\\%s" % "\\".join([f"{i:o}".zfill(3) for i in enc])
 
-        output = "".join(map(_uniconv, output))
+        if self.ps1_escape:
+            output = "".join(map(_uniconv, output))
         return output
 
 

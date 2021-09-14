@@ -138,6 +138,16 @@
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
+    <td><code><a href="#delim_color">delim_color</a></code></td>
+    <td><span>Delimiter color.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#ps1_escape">ps1_escape</a></code></td>
+    <td><span>Escape non-printable sequences to prevent prompt breakage.</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
     <td><code><a href="#title_color">title_color</a></code></td>
     <td><span>Title color.</span></td>
   </tr><tr class="instancevariable">
@@ -150,6 +160,11 @@
     <td>Instance Variable</td>
     <td><code><a href="#sections">sections</a></code></td>
     <td><span>Sections list.</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_no_ps1_escape">set_no_ps1_escape</a></code></td>
+    <td><span>For prompt debugging, set an option to not escape the unicode and non-printable chars.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -170,6 +185,11 @@
     <td>Method</td>
     <td><code><a href="#set_fancy_lines">set_fancy_lines</a></code></td>
     <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set_delim_color">set_delim_color</a></code></td>
+    <td><span>Set Delimiter color.</span></td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -200,9 +220,9 @@
     <td>Instance Variable</td>
     <td><code><a href="#prompt_color">prompt_color</a></code></td>
     <td><span>PS1 Prompt $/# color.</span></td>
-  </tr><tr class="classmethod">
+  </tr><tr class="method">
     
-    <td>Class Method</td>
+    <td>Method</td>
     <td><code><a href="#color">color</a></code></td>
     <td><span>Abstracted color class.</span></td>
   </tr><tr class="method">
@@ -685,6 +705,42 @@
   </div>
 </div><div class="baseinstancevariable">
   
+  <a name="ps1api.Base.delim_color">
+    
+  </a>
+  <a name="delim_color">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">delim_color</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>Delimiter color.</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  <a name="ps1api.Base.ps1_escape">
+    
+  </a>
+  <a name="ps1_escape">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ps1_escape</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>Escape non-printable sequences to prevent prompt breakage.</p></div> (type: <code>bool</code>)
+  </div>
+</div><div class="baseinstancevariable">
+  
   <a name="ps1api.Base.title_color">
     
   </a>
@@ -754,6 +810,24 @@
     
     
     <div><p>Strip color from output.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="ps1api.Base.set_no_ps1_escape">
+    
+  </a>
+  <a name="set_no_ps1_escape">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_no_ps1_escape</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>For prompt debugging, set an option to not escape the unicode and non-printable chars.</p></div>
   </div>
 </div><div class="basemethod">
   
@@ -830,6 +904,24 @@
     ├───
     └──╼
 </pre></div>
+  </div>
+</div><div class="basemethod">
+  
+  <a name="ps1api.Base.set_delim_color">
+    
+  </a>
+  <a name="set_delim_color">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_delim_color</span>(self, value):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Set Delimiter color.</p></div>
   </div>
 </div><div class="basemethod">
   
@@ -944,7 +1036,7 @@
     
     <div><p>PS1 Prompt $/# color.</p></div>
   </div>
-</div><div class="baseclassmethod">
+</div><div class="basemethod">
   
   <a name="ps1api.Base.color">
     
@@ -953,8 +1045,8 @@
     
   </a>
   <div class="functionHeader">
-    @classmethod<br />
-    <span class="py-keyword">def</span> <span class="py-defname">color</span>(cls, cval, txt, escape=True):
+    
+    <span class="py-keyword">def</span> <span class="py-defname">color</span>(self, cval, txt, escape=True):
     
   </div>
   <div class="docstring functionBody">

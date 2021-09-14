@@ -1,6 +1,20 @@
+# v0.0.13
+#### Added options --set_delim_color, --set_no_ps1_escape
+> 2021-09-14 15:24 UTC [HEAD](https://github.com/shollingsworth/ps1/commit/HEAD)
+
+```
+* --set_delim_color
+    * Change delim color from default section color
+* --set_no_ps1_escape
+    * For prompt debugging, set an option to not escape the unicode and
+      non-printable chars
+
+added example: src/ps1api/examples/dark/nightrider.sh
+```
+---
 # v0.0.12
 #### Added sample media/dark/no_unicode.sh.png
-> 2021-09-14 04:14 UTC [HEAD](https://github.com/shollingsworth/ps1/commit/HEAD)
+> 2021-09-14 04:14 UTC [9c38784](https://github.com/shollingsworth/ps1/commit/9c3878415865359ae0a2c286d0d7d9c5926ac148)
 
 ---
 # v0.0.11

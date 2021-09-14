@@ -83,9 +83,8 @@
     </p>
   </body>
 </html>
-
 </richcontent>
-<node TEXT="Installation" POSITION="right" ID="ID_143871825" CREATED="1629902324496" MODIFIED="1631380965335">
+<node TEXT="Installation / Quickstart" POSITION="right" ID="ID_143871825" CREATED="1629902324496" MODIFIED="1631632491087">
 <edge COLOR="#ff0000"/>
 <richcontent TYPE="NOTE">
 
@@ -109,8 +108,27 @@
     <p>
       ```
     </p>
+    <p>
+      
+    </p>
+    <p>
+      Execute this to make your first prompt
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      ```
+    </p>
+    <p>
+      export PS1=&quot;$(ps1 template -t parrot)&quot;
+    </p>
+    <p>
+      ```
+    </p>
   </body>
 </html>
+
 </richcontent>
 </node>
 <node TEXT="License" POSITION="right" ID="ID_1578673671" CREATED="1629902379529" MODIFIED="1629902575114">
@@ -129,8 +147,8 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="Quickstart" POSITION="right" ID="ID_254775212" CREATED="1629939067633" MODIFIED="1631480073800">
-<edge COLOR="#ff0000"/>
+<node TEXT="Other Docs" POSITION="right" ID="ID_1589081779" CREATED="1630019734423" MODIFIED="1631462171498">
+<edge COLOR="#00ff00"/>
 <richcontent TYPE="NOTE">
 
 <html>
@@ -139,42 +157,10 @@
   </head>
   <body>
     <p>
-      Here's an example to get you up and running!
+      * [Api Docs](https://shollingsworth.github.io/ps1/)
     </p>
     <p>
-      
-    </p>
-    <p>
-      ```
-    </p>
-    <p>
-      pip3 install ps1
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      export PS1=&quot;$(ps1 template -t parrot)&quot;
-    </p>
-    <p>
-      ```
-    </p>
-  </body>
-</html>
-
-</richcontent>
-</node>
-<node TEXT="PS1 Command" POSITION="right" ID="ID_433247386" CREATED="1629929022711" MODIFIED="1631462190507">
-<edge COLOR="#00ffff"/>
-<richcontent TYPE="NOTE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      __PS1__
+      * [Changelog](./CHANGELOG.md)
     </p>
   </body>
 </html>
@@ -196,8 +182,8 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="Other Docs" POSITION="right" ID="ID_1589081779" CREATED="1630019734423" MODIFIED="1631462171498">
-<edge COLOR="#00ff00"/>
+<node TEXT="PS1 Command Help" POSITION="right" ID="ID_433247386" CREATED="1629929022711" MODIFIED="1631632350192">
+<edge COLOR="#00ffff"/>
 <richcontent TYPE="NOTE">
 
 <html>
@@ -206,10 +192,7 @@
   </head>
   <body>
     <p>
-      * [Api Docs](https://shollingsworth.github.io/ps1/)
-    </p>
-    <p>
-      * [Changelog](./CHANGELOG.md)
+      __PS1__
     </p>
   </body>
 </html>

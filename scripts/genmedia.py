@@ -49,7 +49,7 @@ def _iter_media_files():
     for i in DARK_DIR.iterdir():
         if not i.name.endswith(".sh"):
             continue
-        yield None, i, dark_path.joinpath(f"{i.name}.png")
+        yield "dark", i, dark_path.joinpath(f"{i.name}.png")
 
 
 def clean():
@@ -78,7 +78,7 @@ def main(overwrite=False):
     for profile, srcfile, dfile in _iter_media_files():
         if not overwrite and dfile.exists():
             continue
-        print(f"Creating: {profile}/{dfile}")
+        print(f"Creating: {dfile}")
         kons = konsole(srcfile, profile)
         sc = screencap(dfile)
         sc.communicate()
