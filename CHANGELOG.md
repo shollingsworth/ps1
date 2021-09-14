@@ -1,6 +1,14 @@
+# v0.0.11
+#### Added new setting --set_title_color
+> 2021-09-14 03:53 UTC [HEAD](https://github.com/shollingsworth/ps1/commit/HEAD)
+
+```
+Updated  demo src/ps1api/examples/dark/stev0_work.sh
+```
+---
 # v0.0.10
 #### Stripped left hand side on newlines
-> 2021-09-14 03:30 UTC [HEAD](https://github.com/shollingsworth/ps1/commit/HEAD)
+> 2021-09-14 03:30 UTC [2931d5b](https://github.com/shollingsworth/ps1/commit/2931d5b1e7d43ebffa093f52e7727887a10b5173)
 
 #### Updated documentation
 > 2021-09-13 22:45 UTC [9649b97](https://github.com/shollingsworth/ps1/commit/9649b970075068e1c3c51f0c281b6b7f26ba1c59)

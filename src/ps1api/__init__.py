@@ -82,9 +82,15 @@ class Base(object):
         self.set_ends()
         self.set_prompt_color()
         self.set_section_delim()
+
+        self.title_color = None
+        """Title color."""
+
         self.fancy_lines = False
         """Turn on Fancy lines."""
+
         self.set_no_color(False)
+
         self.sections = []
         """Sections list."""
 
@@ -94,6 +100,10 @@ class Base(object):
         """Strip color from output."""
         ansi_escape = re.compile(r"\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])")
         return ansi_escape.sub("", value)
+
+    def set_title_color(self, value: str):
+        """Set title color."""
+        self.title_color = value
 
     def set_no_color(self, value=True):
         """Set terminal to no color."""
@@ -477,12 +487,16 @@ class Base(object):
                 mod_lines.append(val)
             elif not color:
                 if title:
+                    if self.title_color:
+                        title = self.color(self.title_color, title)
                     ival = f"{title}:{val}"
                 else:
                     ival = val
                 mod_lines.append(self._sammy(ival))
             else:
                 if title:
+                    if self.title_color:
+                        title = self.color(self.title_color, title)
                     ival = f"{title}:{self.color(color, val)}"
                 else:
                     ival = self.color(color, val)

@@ -16,6 +16,7 @@ ps1 \
     --set_section_delim "" \
     --set_section_color "${_c1}:bold" \
     --set_prompt_color "white" \
+    --set_title_color "grey_50" \
     --add_exit_code "✔" "✘" "green" "red_1" "" \
     --add_custom '$(_shentropy)' "" "entropy" \
     --add_date_time_24hr "green" "" \

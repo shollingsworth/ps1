@@ -52,7 +52,7 @@ usage: ps1 custom [-h] [--add_bash_ver color title] [--add_bash_ver_release colo
                         [--add_user color title] [--add_user_host user_color at_sym_color host_color]
                         [--add_working_dir_basename color title] [--add_working_directory color title] [--set_ends start end]
                         [--set_fancy_lines] [--set_no_color value] [--set_prompt_color color] [--set_section_color color]
-                        [--set_section_delim delim]
+                        [--set_section_delim delim] [--set_title_color value]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -142,6 +142,8 @@ optional arguments:
                         ::
                             i.e. [section1]-[section2]
                                            ^ separator
+  --set_title_color value
+                        Set title color.
 
 ```
 
@@ -247,7 +249,7 @@ export PS1='\[\e[38;5;15m\]\[\e[1m\]\000\342\224\214\000\342\224\200\000\342\224
 
 ### [stev0_work.sh](https://github.com/shollingsworth/ps1/blob/main/src/ps1api/examples/dark/stev0_work.sh)
 ```
-export PS1='\[\e[38;5;196m\]\[\e[1m\]\133\[\e[0m\]$(b_err_code=$?; [[ $b_err_code != 0 ]] && echo "\[\e[38;5;196m\]\000\342\234\230\[\e[0m\]/${b_err_code}" || echo "\[\e[38;5;2m\]\000\342\234\224\[\e[0m\]")\[\e[38;5;196m\]\[\e[1m\]\135\[\e[0m\]\[\e[38;5;196m\]\[\e[1m\]\[\e[0m\]\[\e[38;5;196m\]\[\e[1m\]\133\[\e[0m\]entropy:$(_shentropy)\[\e[38;5;196m\]\[\e[1m\]\135\[\e[0m\]\[\e[38;5;196m\]\[\e[1m\]\[\e[0m\]\[\e[38;5;196m\]\[\e[1m\]\133\[\e[0m\]\[\e[38;5;2m\]\d \t\[\e[0m\]\[\e[38;5;196m\]\[\e[1m\]\135\[\e[0m\]\[\e[38;5;196m\]\[\e[1m\]\[\e[0m\]\[\e[38;5;196m\]\[\e[1m\]\133\[\e[0m\]jobs:\[\e[38;5;196m\]\j\[\e[0m\]\[\e[38;5;196m\]\[\e[1m\]\135\[\e[0m\]\[\e[38;5;196m\]\[\e[1m\]\[\e[0m\]\[\e[38;5;196m\]\[\e[1m\]\133\[\e[0m\]cmd#:\[\e[38;5;196m\]\#\[\e[0m\]\[\e[38;5;196m\]\[\e[1m\]\135\[\e[0m\]\n\[\e[38;5;196m\]\[\e[1m\]\133\[\e[0m\]\[\e[38;5;33m\]\w\[\e[0m\]\[\e[38;5;196m\]\[\e[1m\]\135\[\e[0m\]\[\e[38;5;196m\]\[\e[1m\]\[\e[0m\]\[\e[38;5;196m\]\[\e[1m\]\133\[\e[0m\]\[\e[38;5;11m\]$(br=$(git branch 2>/dev/null| grep '"'"'^\*'"'"' | awk '"'"'{print $NF}'"'"'); [[ "${br}" ]] && echo "${br}" || echo "-")\[\e[0m\]\[\e[38;5;196m\]\[\e[1m\]\135\[\e[0m\]\n\[\e[38;5;15m\]\$ \[\e[0m\]'
+export PS1='\[\e[38;5;196m\]\[\e[1m\]\133\[\e[0m\]$(b_err_code=$?; [[ $b_err_code != 0 ]] && echo "\[\e[38;5;196m\]\000\342\234\230\[\e[0m\]/${b_err_code}" || echo "\[\e[38;5;2m\]\000\342\234\224\[\e[0m\]")\[\e[38;5;196m\]\[\e[1m\]\135\[\e[0m\]\[\e[38;5;196m\]\[\e[1m\]\[\e[0m\]\[\e[38;5;196m\]\[\e[1m\]\133\[\e[0m\]\[\e[38;5;244m\]entropy\[\e[0m\]:$(_shentropy)\[\e[38;5;196m\]\[\e[1m\]\135\[\e[0m\]\[\e[38;5;196m\]\[\e[1m\]\[\e[0m\]\[\e[38;5;196m\]\[\e[1m\]\133\[\e[0m\]\[\e[38;5;2m\]\d \t\[\e[0m\]\[\e[38;5;196m\]\[\e[1m\]\135\[\e[0m\]\[\e[38;5;196m\]\[\e[1m\]\[\e[0m\]\[\e[38;5;196m\]\[\e[1m\]\133\[\e[0m\]\[\e[38;5;244m\]jobs\[\e[0m\]:\[\e[38;5;196m\]\j\[\e[0m\]\[\e[38;5;196m\]\[\e[1m\]\135\[\e[0m\]\[\e[38;5;196m\]\[\e[1m\]\[\e[0m\]\[\e[38;5;196m\]\[\e[1m\]\133\[\e[0m\]\[\e[38;5;244m\]cmd#\[\e[0m\]:\[\e[38;5;196m\]\#\[\e[0m\]\[\e[38;5;196m\]\[\e[1m\]\135\[\e[0m\]\n\[\e[38;5;196m\]\[\e[1m\]\133\[\e[0m\]\[\e[38;5;33m\]\w\[\e[0m\]\[\e[38;5;196m\]\[\e[1m\]\135\[\e[0m\]\[\e[38;5;196m\]\[\e[1m\]\[\e[0m\]\[\e[38;5;196m\]\[\e[1m\]\133\[\e[0m\]\[\e[38;5;11m\]$(br=$(git branch 2>/dev/null| grep '"'"'^\*'"'"' | awk '"'"'{print $NF}'"'"'); [[ "${br}" ]] && echo "${br}" || echo "-")\[\e[0m\]\[\e[38;5;196m\]\[\e[1m\]\135\[\e[0m\]\n\[\e[38;5;15m\]\$ \[\e[0m\]'
 ```
 ![stev0_work.sh](https://raw.githubusercontent.com/shollingsworth/ps1/main/media/dark/stev0_work.sh.png)
 
