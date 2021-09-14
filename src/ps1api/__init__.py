@@ -516,9 +516,10 @@ class Base(object):
 
         if self.no_color:
             return self._strip_color(retval).replace(r"\[\]", "")
-        output = retval.replace("\x1b", r"\e").replace("\n", r"\n")
+        output = "\n".join(i.lstrip() for i in retval.splitlines())
+        output = output.replace("\x1b", r"\e").replace("\n", r"\n")
 
-        # Convert UTF values to ASCII ENCODED
+        # Convert UTF-8 values to Octal bash escape sequences
         def _uniconv(val):
             i = ord(val)
             if i < 256:

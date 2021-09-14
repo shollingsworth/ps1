@@ -1,6 +1,14 @@
+# v0.0.10
+#### Stripped left hand side on newlines
+> 2021-09-14 03:30 UTC [HEAD](https://github.com/shollingsworth/ps1/commit/HEAD)
+
+#### Updated documentation
+> 2021-09-13 22:45 UTC [9649b97](https://github.com/shollingsworth/ps1/commit/9649b970075068e1c3c51f0c281b6b7f26ba1c59)
+
+---
 # v0.0.9
 #### Bugfixes on PS1 prompt behaviour
-> 2021-09-13 22:43 UTC [HEAD](https://github.com/shollingsworth/ps1/commit/HEAD)
+> 2021-09-13 22:44 UTC [fa43c1d](https://github.com/shollingsworth/ps1/commit/fa43c1d11db70f486fb775a58d300837ea123691)
 
 ```
 Fix bug when some subcommands called by themselves
