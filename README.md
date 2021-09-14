@@ -219,6 +219,13 @@ export PS1='\[\e[38;5;196m\]\[\e[1m\]\000\342\224\214\000\342\224\200\000\342\22
 ![ips.sh](https://raw.githubusercontent.com/shollingsworth/ps1/main/media/dark/ips.sh.png)
 
 
+### [no_unicode.sh](https://github.com/shollingsworth/ps1/blob/main/src/ps1api/examples/dark/no_unicode.sh)
+```
+export PS1='\[\e[38;5;196m\]\133\[\e[0m\]$(b_err_code=$?; [[ $b_err_code != 0 ]] && echo "\[\e[38;5;196m\]x\[\e[0m\]/${b_err_code}" || echo "\[\e[38;5;10m\]+\[\e[0m\]")\[\e[38;5;196m\]\135\[\e[0m\]\[\e[38;5;196m\]\[\e[0m\]\[\e[38;5;196m\]\133\[\e[0m\]entropy:$(_shentropy)\[\e[38;5;196m\]\135\[\e[0m\]\[\e[38;5;196m\]\[\e[0m\]\[\e[38;5;196m\]\133\[\e[0m\]\[\e[38;5;11m\]$(br=$(git branch 2>/dev/null| grep '"'"'^\*'"'"' | awk '"'"'{print $NF}'"'"'); [[ "${br}" ]] && echo "${br}" || echo "-")\[\e[0m\]\[\e[38;5;196m\]\135\[\e[0m\]\n\[\e[38;5;196m\]\133\[\e[0m\]\[\e[38;5;10m\]\w\[\e[0m\]\[\e[38;5;196m\]\135\[\e[0m\]\n\[\e[38;5;11m\]\$ \[\e[0m\]'
+```
+![no_unicode.sh](https://raw.githubusercontent.com/shollingsworth/ps1/main/media/dark/no_unicode.sh.png)
+
+
 ### [parrot.sh](https://github.com/shollingsworth/ps1/blob/main/src/ps1api/examples/dark/parrot.sh)
 ```
 export PS1='\[\e[38;5;196m\]\000\342\224\214\000\342\224\200\000\342\224\200\[\e[0m\]\[\e[38;5;196m\]\000\342\235\260\[\e[0m\]$(b_err_code=$?; [[ $b_err_code != 0 ]] && echo "\[\e[38;5;196m\]\000\342\234\230\[\e[0m\]/${b_err_code}" || echo "\[\e[38;5;10m\]\000\342\234\224\[\e[0m\]")\[\e[38;5;196m\]\000\342\235\261\[\e[0m\]\[\e[38;5;196m\]\000\342\224\201\[\e[0m\]\[\e[38;5;196m\]\000\342\235\260\[\e[0m\]\[\e[38;5;247m\]\u\[\e[0m\]\[\e[38;5;11m\]@\[\e[0m\]\[\e[38;5;12m\]\h\[\e[0m\]\[\e[38;5;196m\]\000\342\235\261\[\e[0m\]\[\e[38;5;196m\]\000\342\224\201\[\e[0m\]\[\e[38;5;196m\]\000\342\235\260\[\e[0m\]\[\e[38;5;10m\]\w\[\e[0m\]\[\e[38;5;196m\]\000\342\235\261\[\e[0m\]\n\[\e[38;5;196m\]\000\342\224\234\000\342\224\200\000\342\224\200\[\e[0m\]\[\e[38;5;196m\]\000\342\235\260\[\e[0m\]\[\e[38;5;11m\]$(br=$(git branch 2>/dev/null| grep '"'"'^\*'"'"' | awk '"'"'{print $NF}'"'"'); [[ "${br}" ]] && echo "${br}" || echo "-")\[\e[0m\]\[\e[38;5;196m\]\000\342\235\261\[\e[0m\]\n\[\e[38;5;196m\]\000\342\224\224\000\342\224\200\000\342\225\274\[\e[0m\] \[\e[38;5;11m\]\$ \[\e[0m\]'

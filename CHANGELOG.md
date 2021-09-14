@@ -1,6 +1,11 @@
+# v0.0.12
+#### Added sample media/dark/no_unicode.sh.png
+> 2021-09-14 04:14 UTC [HEAD](https://github.com/shollingsworth/ps1/commit/HEAD)
+
+---
 # v0.0.11
 #### Added new setting --set_title_color
-> 2021-09-14 03:53 UTC [HEAD](https://github.com/shollingsworth/ps1/commit/HEAD)
+> 2021-09-14 03:54 UTC [3d93345](https://github.com/shollingsworth/ps1/commit/3d93345bd481843db816548590f1889df5acb28b)
 
 ```
 Updated  demo src/ps1api/examples/dark/stev0_work.sh
